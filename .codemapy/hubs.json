@@ -1,0 +1,4457 @@
+{
+  "hubs": [
+    {
+      "fan_in": 109,
+      "fan_out": 6,
+      "language": "C Header",
+      "loc": 173,
+      "path": "source/GameData.h",
+      "size": 6934
+    },
+    {
+      "fan_in": 79,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 116,
+      "path": "source/Point.h",
+      "size": 3704
+    },
+    {
+      "fan_in": 78,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 83,
+      "path": "source/DataNode.h",
+      "size": 4295
+    },
+    {
+      "fan_in": 64,
+      "fan_out": 18,
+      "language": "C Header",
+      "loc": 689,
+      "path": "source/Ship.h",
+      "size": 31249
+    },
+    {
+      "fan_in": 61,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 163,
+      "path": "source/text/Format.h",
+      "size": 8606
+    },
+    {
+      "fan_in": 55,
+      "fan_out": 14,
+      "language": "C Header",
+      "loc": 529,
+      "path": "source/PlayerInfo.h",
+      "size": 26220
+    },
+    {
+      "fan_in": 50,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 54,
+      "path": "source/Color.h",
+      "size": 2765
+    },
+    {
+      "fan_in": 48,
+      "fan_out": 6,
+      "language": "C Header",
+      "loc": 246,
+      "path": "source/System.h",
+      "size": 11153
+    },
+    {
+      "fan_in": 48,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 55,
+      "path": "source/Screen.h",
+      "size": 2108
+    },
+    {
+      "fan_in": 45,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 95,
+      "path": "source/UI.h",
+      "size": 3798
+    },
+    {
+      "fan_in": 44,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 63,
+      "path": "source/image/Sprite.h",
+      "size": 3018
+    },
+    {
+      "fan_in": 44,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 275,
+      "path": "source/Preferences.h",
+      "size": 8700
+    },
+    {
+      "fan_in": 43,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 199,
+      "path": "source/Planet.h",
+      "size": 8888
+    },
+    {
+      "fan_in": 41,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 122,
+      "path": "source/DataWriter.h",
+      "size": 5419
+    },
+    {
+      "fan_in": 40,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 25,
+      "path": "source/image/SpriteSet.h",
+      "size": 1281
+    },
+    {
+      "fan_in": 38,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 41,
+      "path": "source/Logger.h",
+      "size": 1719
+    },
+    {
+      "fan_in": 38,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 21,
+      "path": "source/text/FontSet.h",
+      "size": 1028
+    },
+    {
+      "fan_in": 37,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 36,
+      "path": "source/Random.h",
+      "size": 1952
+    },
+    {
+      "fan_in": 34,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 69,
+      "path": "source/text/Font.h",
+      "size": 3373
+    },
+    {
+      "fan_in": 33,
+      "fan_out": 4,
+      "language": "C Header",
+      "loc": 221,
+      "path": "source/Government.h",
+      "size": 10233
+    },
+    {
+      "fan_in": 33,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 59,
+      "path": "source/Angle.h",
+      "size": 2882
+    },
+    {
+      "fan_in": 31,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 184,
+      "path": "source/Panel.h",
+      "size": 8032
+    },
+    {
+      "fan_in": 31,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 63,
+      "path": "source/audio/Audio.h",
+      "size": 3487
+    },
+    {
+      "fan_in": 31,
+      "fan_out": 0,
+      "language": "C++ Header",
+      "loc": 22,
+      "path": "tests/unit/include/es-test.hpp",
+      "size": 1058
+    },
+    {
+      "fan_in": 30,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 64,
+      "path": "source/Rectangle.h",
+      "size": 2806
+    },
+    {
+      "fan_in": 30,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 135,
+      "path": "source/Command.h",
+      "size": 5808
+    },
+    {
+      "fan_in": 29,
+      "fan_out": 6,
+      "language": "C Header",
+      "loc": 227,
+      "path": "source/Interface.h",
+      "size": 10134
+    },
+    {
+      "fan_in": 29,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 193,
+      "path": "source/Outfit.h",
+      "size": 9260
+    },
+    {
+      "fan_in": 28,
+      "fan_out": 4,
+      "language": "C Header",
+      "loc": 350,
+      "path": "source/DialogPanel.h",
+      "size": 14332
+    },
+    {
+      "fan_in": 28,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 24,
+      "path": "source/shader/FillShader.h",
+      "size": 1179
+    },
+    {
+      "fan_in": 27,
+      "fan_out": 4,
+      "language": "C Header",
+      "loc": 55,
+      "path": "source/Information.h",
+      "size": 2514
+    },
+    {
+      "fan_in": 26,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 19,
+      "path": "source/text/Alignment.h",
+      "size": 812
+    },
+    {
+      "fan_in": 24,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 52,
+      "path": "source/shader/SpriteShader.h",
+      "size": 2585
+    },
+    {
+      "fan_in": 22,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 26,
+      "path": "source/text/DisplayText.h",
+      "size": 1102
+    },
+    {
+      "fan_in": 22,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 73,
+      "path": "source/Files.h",
+      "size": 4418
+    },
+    {
+      "fan_in": 21,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 19,
+      "path": "source/text/Truncate.h",
+      "size": 813
+    },
+    {
+      "fan_in": 19,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 419,
+      "path": "source/Weapon.h",
+      "size": 19372
+    },
+    {
+      "fan_in": 18,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 82,
+      "path": "source/StellarObject.h",
+      "size": 3278
+    },
+    {
+      "fan_in": 17,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 71,
+      "path": "source/Phrase.h",
+      "size": 3132
+    },
+    {
+      "fan_in": 17,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 152,
+      "path": "source/Gamerules.h",
+      "size": 6733
+    },
+    {
+      "fan_in": 17,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 23,
+      "path": "source/shader/PointerShader.h",
+      "size": 1165
+    },
+    {
+      "fan_in": 16,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 69,
+      "path": "source/Body.h",
+      "size": 3014
+    },
+    {
+      "fan_in": 16,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 151,
+      "path": "source/ConditionSet.h",
+      "size": 8363
+    },
+    {
+      "fan_in": 16,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 47,
+      "path": "source/opengl.h",
+      "size": 1657
+    },
+    {
+      "fan_in": 15,
+      "fan_out": 10,
+      "language": "C Header",
+      "loc": 288,
+      "path": "source/Mission.h",
+      "size": 14053
+    },
+    {
+      "fan_in": 15,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 77,
+      "path": "source/ShipEvent.h",
+      "size": 3685
+    },
+    {
+      "fan_in": 15,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 58,
+      "path": "source/CategoryList.h",
+      "size": 2810
+    },
+    {
+      "fan_in": 14,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 53,
+      "path": "source/Effect.h",
+      "size": 2325
+    },
+    {
+      "fan_in": 14,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 51,
+      "path": "source/Messages.h",
+      "size": 2247
+    },
+    {
+      "fan_in": 14,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 40,
+      "path": "source/DataFile.h",
+      "size": 1906
+    },
+    {
+      "fan_in": 13,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 90,
+      "path": "source/text/WrappedText.h",
+      "size": 3303
+    },
+    {
+      "fan_in": 13,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 162,
+      "path": "source/Conversation.h",
+      "size": 8305
+    },
+    {
+      "fan_in": 13,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 29,
+      "path": "source/shader/Shader.h",
+      "size": 1349
+    },
+    {
+      "fan_in": 13,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 16,
+      "path": "source/pi.h",
+      "size": 835
+    },
+    {
+      "fan_in": 12,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 57,
+      "path": "source/image/SpriteLoadManager.h",
+      "size": 3100
+    },
+    {
+      "fan_in": 11,
+      "fan_out": 4,
+      "language": "C Header",
+      "loc": 75,
+      "path": "source/Fleet.h",
+      "size": 3513
+    },
+    {
+      "fan_in": 11,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 128,
+      "path": "source/Projectile.h",
+      "size": 5625
+    },
+    {
+      "fan_in": 11,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 56,
+      "path": "source/image/Mask.h",
+      "size": 2864
+    },
+    {
+      "fan_in": 11,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 65,
+      "path": "source/ConditionsStore.h",
+      "size": 3463
+    },
+    {
+      "fan_in": 11,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 43,
+      "path": "source/Swizzle.h",
+      "size": 1579
+    },
+    {
+      "fan_in": 11,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 100,
+      "path": "source/ExclusiveItem.h",
+      "size": 3915
+    },
+    {
+      "fan_in": 11,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 28,
+      "path": "source/shader/RingShader.h",
+      "size": 1418
+    },
+    {
+      "fan_in": 11,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 27,
+      "path": "source/shader/LineShader.h",
+      "size": 1563
+    },
+    {
+      "fan_in": 10,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 122,
+      "path": "source/Minable.h",
+      "size": 5168
+    },
+    {
+      "fan_in": 10,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 44,
+      "path": "source/ClickZone.h",
+      "size": 1777
+    },
+    {
+      "fan_in": 10,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 97,
+      "path": "source/LocationFilter.h",
+      "size": 4877
+    },
+    {
+      "fan_in": 10,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 57,
+      "path": "source/Wormhole.h",
+      "size": 2296
+    },
+    {
+      "fan_in": 10,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 69,
+      "path": "source/TaskQueue.h",
+      "size": 3189
+    },
+    {
+      "fan_in": 10,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 18,
+      "path": "source/CategoryType.h",
+      "size": 766
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 107,
+      "path": "source/text/Table.h",
+      "size": 4861
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 106,
+      "path": "source/ScrollBar.h",
+      "size": 4294
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 90,
+      "path": "source/Drawable.h",
+      "size": 3575
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 67,
+      "path": "source/shader/StarField.h",
+      "size": 2468
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 42,
+      "path": "source/TextArea.h",
+      "size": 1565
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 36,
+      "path": "source/Visual.h",
+      "size": 1447
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 55,
+      "path": "source/text/Layout.h",
+      "size": 2159
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 53,
+      "path": "source/CoreStartData.h",
+      "size": 2378
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 132,
+      "path": "source/FormationPattern.h",
+      "size": 5841
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 71,
+      "path": "source/Politics.h",
+      "size": 3677
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 68,
+      "path": "source/Set.h",
+      "size": 3094
+    },
+    {
+      "fan_in": 9,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 64,
+      "path": "source/Date.h",
+      "size": 2737
+    },
+    {
+      "fan_in": 8,
+      "fan_out": 6,
+      "language": "C Header",
+      "loc": 76,
+      "path": "source/MapDetailPanel.h",
+      "size": 3281
+    },
+    {
+      "fan_in": 8,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 135,
+      "path": "source/ConversationPanel.h",
+      "size": 5802
+    },
+    {
+      "fan_in": 8,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 93,
+      "path": "source/Port.h",
+      "size": 3918
+    },
+    {
+      "fan_in": 8,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 128,
+      "path": "source/ScrollVar.h",
+      "size": 4182
+    },
+    {
+      "fan_in": 8,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 81,
+      "path": "source/ShipJumpNavigation.h",
+      "size": 3994
+    },
+    {
+      "fan_in": 8,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 19,
+      "path": "tests/unit/include/datanode-factory.h",
+      "size": 1024
+    },
+    {
+      "fan_in": 7,
+      "fan_out": 6,
+      "language": "C Header",
+      "loc": 176,
+      "path": "source/MapPanel.h",
+      "size": 7311
+    },
+    {
+      "fan_in": 7,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 132,
+      "path": "source/Shop.h",
+      "size": 4858
+    },
+    {
+      "fan_in": 7,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 76,
+      "path": "source/GameEvent.h",
+      "size": 3644
+    },
+    {
+      "fan_in": 7,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 70,
+      "path": "source/Tooltip.h",
+      "size": 2410
+    },
+    {
+      "fan_in": 7,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 93,
+      "path": "source/DistanceMap.h",
+      "size": 5140
+    },
+    {
+      "fan_in": 7,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 86,
+      "path": "source/PilotProfile.h",
+      "size": 4355
+    },
+    {
+      "fan_in": 7,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 40,
+      "path": "source/image/MaskManager.h",
+      "size": 1895
+    },
+    {
+      "fan_in": 7,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 69,
+      "path": "source/EsUuid.h",
+      "size": 2785
+    },
+    {
+      "fan_in": 7,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 65,
+      "path": "source/audio/supplier/AudioSupplier.h",
+      "size": 3394
+    },
+    {
+      "fan_in": 7,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 41,
+      "path": "source/Endpoint.h",
+      "size": 1922
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 79,
+      "path": "source/Flotsam.h",
+      "size": 3523
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 63,
+      "path": "source/Sale.h",
+      "size": 2377
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 35,
+      "path": "source/Collision.h",
+      "size": 1502
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 154,
+      "path": "source/WeightedList.h",
+      "size": 6276
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 67,
+      "path": "source/ConditionAssignments.h",
+      "size": 2977
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 55,
+      "path": "source/Hazard.h",
+      "size": 2601
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 23,
+      "path": "source/shader/OutlineShader.h",
+      "size": 1079
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 109,
+      "path": "source/CargoHold.h",
+      "size": 5091
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 70,
+      "path": "source/Depreciation.h",
+      "size": 3451
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 62,
+      "path": "source/image/ImageBuffer.h",
+      "size": 2947
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 36,
+      "path": "source/Trade.h",
+      "size": 1470
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 22,
+      "path": "source/windows/WinVersion.h",
+      "size": 1031
+    },
+    {
+      "fan_in": 6,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 14,
+      "path": "tests/unit/include/logger-output.h",
+      "size": 774
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 102,
+      "path": "source/StartConditions.h",
+      "size": 4539
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 111,
+      "path": "source/test/Test.h",
+      "size": 4551
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 67,
+      "path": "source/Person.h",
+      "size": 2751
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 65,
+      "path": "source/MainPanel.h",
+      "size": 2739
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 79,
+      "path": "source/Message.h",
+      "size": 2969
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 64,
+      "path": "source/RenderBuffer.h",
+      "size": 2572
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 57,
+      "path": "source/shader/DrawList.h",
+      "size": 2758
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 86,
+      "path": "source/Personality.h",
+      "size": 3029
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 85,
+      "path": "source/MissionPanel.h",
+      "size": 4045
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 44,
+      "path": "source/FireCommand.h",
+      "size": 1990
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 42,
+      "path": "source/Paragraphs.h",
+      "size": 1886
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 34,
+      "path": "source/LoadingCircle.h",
+      "size": 1584
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 34,
+      "path": "source/PluginManager.h",
+      "size": 1646
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 30,
+      "path": "source/image/ImageFileData.h",
+      "size": 1265
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 91,
+      "path": "source/ship/ResourceLevels.h",
+      "size": 4331
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 59,
+      "path": "source/Plugin.h",
+      "size": 2521
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 0,
+      "language": "C++ Header",
+      "loc": 51,
+      "path": "tests/unit/include/output-capture.hpp",
+      "size": 1715
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 42,
+      "path": "source/Confusion.h",
+      "size": 1678
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 38,
+      "path": "source/TextReplacements.h",
+      "size": 2004
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 37,
+      "path": "source/StellarObjectSpriteData.h",
+      "size": 1503
+    },
+    {
+      "fan_in": 5,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 22,
+      "path": "source/CollisionType.h",
+      "size": 997
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 88,
+      "path": "source/GamerulesPanel.h",
+      "size": 3237
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 83,
+      "path": "source/PlayerInfoPanel.h",
+      "size": 3944
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 54,
+      "path": "source/comparators/BySeriesAndIndex.h",
+      "size": 2094
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 131,
+      "path": "source/Entity.h",
+      "size": 5698
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 57,
+      "path": "source/ItemInfoDisplay.h",
+      "size": 2364
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 45,
+      "path": "source/News.h",
+      "size": 1850
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 151,
+      "path": "source/Hardpoint.h",
+      "size": 6945
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 72,
+      "path": "source/Radar.h",
+      "size": 2665
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 51,
+      "path": "source/MapShipyardPanel.h",
+      "size": 2317
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 47,
+      "path": "source/MapOutfitterPanel.h",
+      "size": 2133
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 73,
+      "path": "source/Account.h",
+      "size": 3016
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 58,
+      "path": "source/ShipInfoDisplay.h",
+      "size": 2702
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 45,
+      "path": "source/GameWindow.h",
+      "size": 1945
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 45,
+      "path": "source/RoutePlan.h",
+      "size": 2015
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 32,
+      "path": "source/audio/Sound.h",
+      "size": 1432
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 27,
+      "path": "source/Galaxy.h",
+      "size": 1181
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 26,
+      "path": "source/DistanceCalculationSettings.h",
+      "size": 1218
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 61,
+      "path": "source/InfoPanelState.h",
+      "size": 2538
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 53,
+      "path": "source/ship/ShipAICache.h",
+      "size": 2468
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 46,
+      "path": "source/test/TestData.h",
+      "size": 2022
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 32,
+      "path": "source/text/Utf8.h",
+      "size": 1626
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 29,
+      "path": "source/RaidFleet.h",
+      "size": 1297
+    },
+    {
+      "fan_in": 4,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 26,
+      "path": "source/CustomEvents.h",
+      "size": 1167
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 35,
+      "language": "C Header",
+      "loc": 139,
+      "path": "source/UniverseObjects.h",
+      "size": 5062
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 21,
+      "language": "C Header",
+      "loc": 273,
+      "path": "source/Engine.h",
+      "size": 9920
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 13,
+      "language": "C Header",
+      "loc": 206,
+      "path": "source/ShopPanel.h",
+      "size": 8567
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 8,
+      "language": "C Header",
+      "loc": 72,
+      "path": "source/StartConditionsPanel.h",
+      "size": 2975
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 7,
+      "language": "C Header",
+      "loc": 145,
+      "path": "source/NPC.h",
+      "size": 6558
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 6,
+      "language": "C Header",
+      "loc": 260,
+      "path": "source/AI.h",
+      "size": 14976
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 89,
+      "path": "source/ShipInfoPanel.h",
+      "size": 3729
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 83,
+      "path": "source/MissionAction.h",
+      "size": 4178
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 4,
+      "language": "C Header",
+      "loc": 92,
+      "path": "source/GameAction.h",
+      "size": 3849
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 4,
+      "language": "C Header",
+      "loc": 58,
+      "path": "source/ScrollArea.h",
+      "size": 2157
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 120,
+      "path": "source/BoardingPanel.h",
+      "size": 4793
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 86,
+      "path": "source/MapSalesPanel.h",
+      "size": 3631
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 57,
+      "path": "source/LogbookPanel.h",
+      "size": 2342
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 54,
+      "path": "source/DialogSettings.h",
+      "size": 2324
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 48,
+      "path": "source/PlanetLabel.h",
+      "size": 1896
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 32,
+      "path": "source/FighterHitHelper.h",
+      "size": 1310
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 77,
+      "path": "source/CollisionSet.h",
+      "size": 3365
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 68,
+      "path": "source/audio/player/AudioPlayer.h",
+      "size": 3461
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 52,
+      "path": "source/ShipyardPanel.h",
+      "size": 2384
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 44,
+      "path": "source/DamageDealt.h",
+      "size": 2037
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 33,
+      "path": "source/MessageLogPanel.h",
+      "size": 1417
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 30,
+      "path": "source/AlertLabel.h",
+      "size": 1174
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 80,
+      "path": "source/Armament.h",
+      "size": 4149
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 67,
+      "path": "source/Weather.h",
+      "size": 2836
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 65,
+      "path": "source/FormationPositioner.h",
+      "size": 3226
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 63,
+      "path": "source/image/ImageSet.h",
+      "size": 3112
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 54,
+      "path": "source/audio/supplier/AsyncAudioSupplier.h",
+      "size": 2440
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 50,
+      "path": "source/OutfitInfoDisplay.h",
+      "size": 2413
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 47,
+      "path": "source/MenuPanel.h",
+      "size": 1914
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 47,
+      "path": "source/shader/BatchDrawList.h",
+      "size": 2203
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 28,
+      "path": "source/FleetCargo.h",
+      "size": 1174
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 27,
+      "path": "source/audio/Music.h",
+      "size": 1393
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 26,
+      "path": "source/ShipNameDialogPanel.h",
+      "size": 1302
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 64,
+      "path": "source/ConditionEntry.h",
+      "size": 3726
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 48,
+      "path": "source/SavedGame.h",
+      "size": 1973
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 46,
+      "path": "source/Bitset.h",
+      "size": 1971
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 43,
+      "path": "source/BookEntry.h",
+      "size": 1697
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 38,
+      "path": "source/Dictionary.h",
+      "size": 1880
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 38,
+      "path": "source/test/TestContext.h",
+      "size": 1545
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 37,
+      "path": "source/RouteEdge.h",
+      "size": 1958
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 34,
+      "path": "source/GameVersion.h",
+      "size": 1400
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 32,
+      "path": "source/ScanType.h",
+      "size": 1089
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 29,
+      "path": "source/text/Clipboard.h",
+      "size": 1577
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 24,
+      "path": "source/shader/BatchShader.h",
+      "size": 1059
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 22,
+      "path": "source/StringInterner.h",
+      "size": 1271
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 21,
+      "path": "source/shader/FogShader.h",
+      "size": 954
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 20,
+      "path": "source/MinableDamageDealt.h",
+      "size": 866
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 20,
+      "path": "source/audio/SoundCategory.h",
+      "size": 953
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 18,
+      "path": "source/JumpType.h",
+      "size": 806
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 6,
+      "language": "C Header",
+      "loc": 84,
+      "path": "source/PreferencesPanel.h",
+      "size": 3212
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 74,
+      "path": "source/AsteroidField.h",
+      "size": 3506
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 73,
+      "path": "source/LoadPanel.h",
+      "size": 2937
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 4,
+      "language": "C Header",
+      "loc": 95,
+      "path": "source/Edit.h",
+      "size": 3616
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 4,
+      "language": "C Header",
+      "loc": 64,
+      "path": "source/Dropdown.h",
+      "size": 2356
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 107,
+      "path": "source/OptionalInputDialogPanel.h",
+      "size": 5077
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 57,
+      "path": "source/DamageProfile.h",
+      "size": 2427
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 3,
+      "language": "C Header",
+      "loc": 41,
+      "path": "source/TableArea.h",
+      "size": 1567
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 88,
+      "path": "source/OutfitterPanel.h",
+      "size": 4071
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 76,
+      "path": "source/MapPlanetCard.h",
+      "size": 2951
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 74,
+      "path": "source/PlanetPanel.h",
+      "size": 3054
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 60,
+      "path": "source/HailPanel.h",
+      "size": 2314
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 55,
+      "path": "source/RandomEvent.h",
+      "size": 1948
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 45,
+      "path": "source/SpaceportPanel.h",
+      "size": 1701
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 35,
+      "path": "source/GameLoadingPanel.h",
+      "size": 1378
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 30,
+      "path": "source/Caret.h",
+      "size": 1150
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 132,
+      "path": "source/ship/ShipAttributeCache.h",
+      "size": 4625
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 97,
+      "path": "source/MissionTimer.h",
+      "size": 4392
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 65,
+      "path": "source/EscortDisplay.h",
+      "size": 2473
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 59,
+      "path": "source/orders/Orders.h",
+      "size": 2206
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 51,
+      "path": "source/NPCAction.h",
+      "size": 2470
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 44,
+      "path": "source/audio/supplier/effect/Fade.h",
+      "size": 2209
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 43,
+      "path": "source/MiniMap.h",
+      "size": 1773
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 43,
+      "path": "source/TradingPanel.h",
+      "size": 2001
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 40,
+      "path": "source/BankPanel.h",
+      "size": 1791
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 39,
+      "path": "source/audio/supplier/FlacSupplier.h",
+      "size": 2324
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 34,
+      "path": "source/AmmoDisplay.h",
+      "size": 1351
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 33,
+      "path": "source/orders/OrderSet.h",
+      "size": 1526
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 30,
+      "path": "source/Camera.h",
+      "size": 1311
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 30,
+      "path": "source/HiringPanel.h",
+      "size": 1363
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 26,
+      "path": "source/audio/player/MusicPlayer.h",
+      "size": 1348
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 26,
+      "path": "source/audio/supplier/WavSupplier.h",
+      "size": 1184
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 23,
+      "path": "source/MenuAnimationPanel.h",
+      "size": 1043
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 21,
+      "path": "source/audio/supplier/Mp3Supplier.h",
+      "size": 1011
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 21,
+      "path": "source/orders/OrderSingle.h",
+      "size": 929
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 104,
+      "path": "source/Animate.h",
+      "size": 2909
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 71,
+      "path": "source/Mortgage.h",
+      "size": 3533
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 57,
+      "path": "source/CaptureOdds.h",
+      "size": 3052
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 53,
+      "path": "source/ZipFile.h",
+      "size": 2917
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 49,
+      "path": "source/ShipManager.h",
+      "size": 1976
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 40,
+      "path": "source/FrameTimer.h",
+      "size": 1954
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 36,
+      "path": "source/Variant.h",
+      "size": 1490
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 30,
+      "path": "source/Distribution.h",
+      "size": 1172
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 29,
+      "path": "source/Hasher.h",
+      "size": 1353
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 24,
+      "path": "source/WormholeStrategy.h",
+      "size": 1155
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 23,
+      "path": "source/shift.h",
+      "size": 1468
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 20,
+      "path": "source/MouseButton.h",
+      "size": 780
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 20,
+      "path": "source/PrintData.h",
+      "size": 980
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 19,
+      "path": "source/SystemEntry.h",
+      "size": 818
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 19,
+      "path": "source/windows/TimerResolutionGuard.h",
+      "size": 930
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 19,
+      "path": "source/windows/WinWindow.h",
+      "size": 961
+    },
+    {
+      "fan_in": 2,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 16,
+      "path": "source/windows/WinConsole.h",
+      "size": 749
+    },
+    {
+      "fan_in": 1,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 40,
+      "path": "source/comparators/ByGivenOrder.h",
+      "size": 1499
+    },
+    {
+      "fan_in": 1,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 29,
+      "path": "source/comparators/ByUUID.h",
+      "size": 1265
+    },
+    {
+      "fan_in": 1,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 19,
+      "path": "source/image/BlendingMode.h",
+      "size": 927
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 61,
+      "language": "C++",
+      "loc": 2752,
+      "path": "source/Engine.cpp",
+      "size": 110457
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 53,
+      "language": "C++",
+      "loc": 700,
+      "path": "source/GameData.cpp",
+      "size": 21280
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 44,
+      "language": "C++",
+      "loc": 1256,
+      "path": "source/MapPanel.cpp",
+      "size": 46122
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 40,
+      "language": "C++",
+      "loc": 961,
+      "path": "source/MapDetailPanel.cpp",
+      "size": 37042
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 39,
+      "language": "C++",
+      "loc": 4736,
+      "path": "source/PlayerInfo.cpp",
+      "size": 178260
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 37,
+      "language": "C++",
+      "loc": 4754,
+      "path": "source/AI.cpp",
+      "size": 192651
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 37,
+      "language": "C++",
+      "loc": 622,
+      "path": "source/main.cpp",
+      "size": 23684
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 36,
+      "language": "C++",
+      "loc": 4306,
+      "path": "source/Ship.cpp",
+      "size": 157406
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 35,
+      "language": "C++",
+      "loc": 527,
+      "path": "source/PlanetPanel.cpp",
+      "size": 19040
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 32,
+      "language": "C++",
+      "loc": 1286,
+      "path": "source/ShopPanel.cpp",
+      "size": 41287
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 30,
+      "language": "C++",
+      "loc": 1440,
+      "path": "source/PreferencesPanel.cpp",
+      "size": 47355
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 30,
+      "language": "C++",
+      "loc": 1035,
+      "path": "source/MissionPanel.cpp",
+      "size": 34788
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 29,
+      "language": "C++",
+      "loc": 780,
+      "path": "source/ShipInfoPanel.cpp",
+      "size": 28571
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 29,
+      "language": "C++",
+      "loc": 508,
+      "path": "source/ConversationPanel.cpp",
+      "size": 19301
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 28,
+      "language": "C++",
+      "loc": 816,
+      "path": "source/PlayerInfoPanel.cpp",
+      "size": 29624
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 28,
+      "language": "C++",
+      "loc": 551,
+      "path": "source/LoadPanel.cpp",
+      "size": 19223
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 28,
+      "language": "C++",
+      "loc": 390,
+      "path": "source/MapSalesPanel.cpp",
+      "size": 13839
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 28,
+      "language": "C++",
+      "loc": 285,
+      "path": "source/StartConditionsPanel.cpp",
+      "size": 11637
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 27,
+      "language": "C++",
+      "loc": 1232,
+      "path": "source/OutfitterPanel.cpp",
+      "size": 52796
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 27,
+      "language": "C++",
+      "loc": 243,
+      "path": "source/MenuPanel.cpp",
+      "size": 8185
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 26,
+      "language": "C++",
+      "loc": 600,
+      "path": "source/MainPanel.cpp",
+      "size": 20655
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 26,
+      "language": "C++",
+      "loc": 454,
+      "path": "source/ShipyardPanel.cpp",
+      "size": 17679
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 24,
+      "language": "C++",
+      "loc": 896,
+      "path": "source/GamerulesPanel.cpp",
+      "size": 35028
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 24,
+      "language": "C++",
+      "loc": 664,
+      "path": "source/BoardingPanel.cpp",
+      "size": 24676
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 23,
+      "language": "C++",
+      "loc": 429,
+      "path": "source/HailPanel.cpp",
+      "size": 14840
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 22,
+      "language": "C++",
+      "loc": 528,
+      "path": "source/DialogPanel.cpp",
+      "size": 19059
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 21,
+      "language": "C++",
+      "loc": 733,
+      "path": "source/Interface.cpp",
+      "size": 26658
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 20,
+      "language": "C++",
+      "loc": 1609,
+      "path": "source/Mission.cpp",
+      "size": 56628
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 20,
+      "language": "C++",
+      "loc": 350,
+      "path": "source/TradingPanel.cpp",
+      "size": 12427
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 19,
+      "language": "C++",
+      "loc": 698,
+      "path": "source/NPC.cpp",
+      "size": 26721
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 18,
+      "language": "C++",
+      "loc": 251,
+      "path": "source/MapPlanetCard.cpp",
+      "size": 11270
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 18,
+      "language": "C++",
+      "loc": 250,
+      "path": "source/MiniMap.cpp",
+      "size": 9825
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 18,
+      "language": "C++",
+      "loc": 234,
+      "path": "source/MapShipyardPanel.cpp",
+      "size": 7585
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 17,
+      "language": "C++",
+      "loc": 825,
+      "path": "source/PrintData.cpp",
+      "size": 32288
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 17,
+      "language": "C++",
+      "loc": 507,
+      "path": "source/GameAction.cpp",
+      "size": 16845
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 17,
+      "language": "C++",
+      "loc": 332,
+      "path": "source/MissionAction.cpp",
+      "size": 12735
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 17,
+      "language": "C++",
+      "loc": 251,
+      "path": "source/MapOutfitterPanel.cpp",
+      "size": 8015
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 17,
+      "language": "C++",
+      "loc": 116,
+      "path": "source/MessageLogPanel.cpp",
+      "size": 4015
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 16,
+      "language": "C++",
+      "loc": 1068,
+      "path": "source/System.cpp",
+      "size": 36833
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 16,
+      "language": "C++",
+      "loc": 339,
+      "path": "source/BankPanel.cpp",
+      "size": 12835
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 16,
+      "language": "C++",
+      "loc": 312,
+      "path": "source/LogbookPanel.cpp",
+      "size": 10710
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 16,
+      "language": "C++",
+      "loc": 76,
+      "path": "source/GameLoadingPanel.cpp",
+      "size": 2806
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 15,
+      "language": "C++",
+      "loc": 790,
+      "path": "source/Planet.cpp",
+      "size": 27320
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 15,
+      "language": "C++",
+      "loc": 194,
+      "path": "source/PlanetLabel.cpp",
+      "size": 7870
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 15,
+      "language": "C++",
+      "loc": 125,
+      "path": "source/AmmoDisplay.cpp",
+      "size": 4675
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 14,
+      "language": "C++",
+      "loc": 596,
+      "path": "source/LocationFilter.cpp",
+      "size": 20392
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 14,
+      "language": "C++",
+      "loc": 458,
+      "path": "source/Fleet.cpp",
+      "size": 17578
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 14,
+      "language": "C++",
+      "loc": 412,
+      "path": "source/ShipInfoDisplay.cpp",
+      "size": 16656
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 14,
+      "language": "C++",
+      "loc": 142,
+      "path": "source/SpaceportPanel.cpp",
+      "size": 5345
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 13,
+      "language": "C++",
+      "loc": 858,
+      "path": "source/Preferences.cpp",
+      "size": 33074
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 13,
+      "language": "C++",
+      "loc": 425,
+      "path": "source/Panel.cpp",
+      "size": 11526
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 13,
+      "language": "C++",
+      "loc": 377,
+      "path": "source/shader/StarField.cpp",
+      "size": 14050
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 12,
+      "language": "C++",
+      "loc": 473,
+      "path": "source/Projectile.cpp",
+      "size": 18683
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 12,
+      "language": "C++",
+      "loc": 422,
+      "path": "source/Hardpoint.cpp",
+      "size": 15880
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 12,
+      "language": "C++",
+      "loc": 285,
+      "path": "source/Minable.cpp",
+      "size": 11009
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 12,
+      "language": "C++",
+      "loc": 274,
+      "path": "source/Port.cpp",
+      "size": 9159
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 11,
+      "language": "C++",
+      "loc": 817,
+      "path": "source/Government.cpp",
+      "size": 29693
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 11,
+      "language": "C++",
+      "loc": 597,
+      "path": "source/test/Test.cpp",
+      "size": 20132
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 11,
+      "language": "C++",
+      "loc": 401,
+      "path": "source/text/Font.cpp",
+      "size": 12596
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 11,
+      "language": "C++",
+      "loc": 354,
+      "path": "source/StartConditions.cpp",
+      "size": 13337
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 11,
+      "language": "C++",
+      "loc": 252,
+      "path": "source/Dropdown.cpp",
+      "size": 7670
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 11,
+      "language": "C++",
+      "loc": 229,
+      "path": "source/EscortDisplay.cpp",
+      "size": 7974
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 11,
+      "language": "C++",
+      "loc": 155,
+      "path": "source/ItemInfoDisplay.cpp",
+      "size": 5058
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 10,
+      "language": "C++",
+      "loc": 688,
+      "path": "source/UniverseObjects.cpp",
+      "size": 24528
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 10,
+      "language": "C++",
+      "loc": 189,
+      "path": "source/AsteroidField.cpp",
+      "size": 7680
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 10,
+      "language": "C++",
+      "loc": 179,
+      "path": "source/ShipManager.cpp",
+      "size": 5484
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 10,
+      "language": "C++",
+      "loc": 143,
+      "path": "source/SavedGame.cpp",
+      "size": 3951
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 9,
+      "language": "C++",
+      "loc": 510,
+      "path": "source/CargoHold.cpp",
+      "size": 17126
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 9,
+      "language": "C++",
+      "loc": 504,
+      "path": "source/Edit.cpp",
+      "size": 11650
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 9,
+      "language": "C++",
+      "loc": 418,
+      "path": "source/audio/Audio.cpp",
+      "size": 14933
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 9,
+      "language": "C++",
+      "loc": 355,
+      "path": "source/Politics.cpp",
+      "size": 12444
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 9,
+      "language": "C++",
+      "loc": 337,
+      "path": "source/MissionTimer.cpp",
+      "size": 10780
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 9,
+      "language": "C++",
+      "loc": 304,
+      "path": "source/CollisionSet.cpp",
+      "size": 11560
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 9,
+      "language": "C++",
+      "loc": 252,
+      "path": "source/image/ImageSet.cpp",
+      "size": 10641
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 9,
+      "language": "C++",
+      "loc": 247,
+      "path": "source/PilotProfile.cpp",
+      "size": 8067
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 9,
+      "language": "C++",
+      "loc": 182,
+      "path": "source/FleetCargo.cpp",
+      "size": 6726
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 9,
+      "language": "C++",
+      "loc": 145,
+      "path": "source/Flotsam.cpp",
+      "size": 5126
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 9,
+      "language": "C++",
+      "loc": 108,
+      "path": "source/HiringPanel.cpp",
+      "size": 4067
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 682,
+      "path": "source/Outfit.cpp",
+      "size": 25751
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 534,
+      "path": "source/Conversation.cpp",
+      "size": 17333
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 303,
+      "path": "source/DistanceMap.cpp",
+      "size": 13365
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 259,
+      "path": "source/Drawable.cpp",
+      "size": 8645
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 209,
+      "path": "source/shader/FogShader.cpp",
+      "size": 8220
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 199,
+      "path": "source/Message.cpp",
+      "size": 5901
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 182,
+      "path": "source/DamageProfile.cpp",
+      "size": 9174
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 180,
+      "path": "source/PluginManager.cpp",
+      "size": 6173
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 165,
+      "path": "source/Person.cpp",
+      "size": 5434
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 153,
+      "path": "source/shader/DrawList.cpp",
+      "size": 5804
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 114,
+      "path": "source/BookEntry.cpp",
+      "size": 3534
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 113,
+      "path": "source/test/TestData.cpp",
+      "size": 4233
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 8,
+      "language": "C++",
+      "loc": 57,
+      "path": "source/AlertLabel.cpp",
+      "size": 2251
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 7,
+      "language": "C++",
+      "loc": 664,
+      "path": "source/OutfitInfoDisplay.cpp",
+      "size": 22080
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 7,
+      "language": "C++",
+      "loc": 561,
+      "path": "source/Weapon.cpp",
+      "size": 18487
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 7,
+      "language": "C++",
+      "loc": 314,
+      "path": "tests/unit/src/test_conditionSet.cpp",
+      "size": 12632
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 7,
+      "language": "C++",
+      "loc": 306,
+      "path": "source/Depreciation.cpp",
+      "size": 10709
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 7,
+      "language": "C++",
+      "loc": 298,
+      "path": "source/image/SpriteLoadManager.cpp",
+      "size": 10748
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 7,
+      "language": "C++",
+      "loc": 253,
+      "path": "source/RenderBuffer.cpp",
+      "size": 8905
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 7,
+      "language": "C++",
+      "loc": 217,
+      "path": "source/text/Table.cpp",
+      "size": 7088
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 7,
+      "language": "C++",
+      "loc": 135,
+      "path": "source/StellarObject.cpp",
+      "size": 4105
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 7,
+      "language": "C++",
+      "loc": 131,
+      "path": "source/shader/RingShader.cpp",
+      "size": 4136
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 7,
+      "language": "C++",
+      "loc": 125,
+      "path": "source/shader/OutlineShader.cpp",
+      "size": 4181
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 7,
+      "language": "C++",
+      "loc": 123,
+      "path": "source/shader/BatchDrawList.cpp",
+      "size": 5376
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 381,
+      "path": "tests/unit/src/test_esuuid.cpp",
+      "size": 14735
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 293,
+      "path": "source/Entity.cpp",
+      "size": 9989
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 246,
+      "path": "source/Armament.cpp",
+      "size": 8343
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 235,
+      "path": "tests/unit/src/test_datafile.cpp",
+      "size": 7579
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 233,
+      "path": "source/Tooltip.cpp",
+      "size": 7717
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 215,
+      "path": "source/GameEvent.cpp",
+      "size": 7826
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 208,
+      "path": "source/FormationPositioner.cpp",
+      "size": 7920
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 203,
+      "path": "source/image/Sprite.cpp",
+      "size": 7280
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 178,
+      "path": "source/shader/SpriteShader.cpp",
+      "size": 5901
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 152,
+      "path": "source/shader/LineShader.cpp",
+      "size": 5474
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 144,
+      "path": "source/Weather.cpp",
+      "size": 6364
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 128,
+      "path": "source/Body.cpp",
+      "size": 4399
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 121,
+      "path": "tests/unit/src/test_conditionAssignments.cpp",
+      "size": 5140
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 115,
+      "path": "source/shader/PointerShader.cpp",
+      "size": 3608
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 114,
+      "path": "source/ship/ShipAICache.cpp",
+      "size": 4645
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 99,
+      "path": "source/shader/FillShader.cpp",
+      "size": 3205
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 88,
+      "path": "source/CoreStartData.cpp",
+      "size": 3113
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 75,
+      "path": "source/NPCAction.cpp",
+      "size": 2815
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 6,
+      "language": "C++",
+      "loc": 43,
+      "path": "source/MenuAnimationPanel.cpp",
+      "size": 1463
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 701,
+      "path": "source/ConditionSet.cpp",
+      "size": 26732
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 393,
+      "path": "source/GameWindow.cpp",
+      "size": 12670
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 365,
+      "path": "source/Personality.cpp",
+      "size": 8782
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 338,
+      "path": "source/Command.cpp",
+      "size": 12795
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 274,
+      "path": "source/UI.cpp",
+      "size": 8055
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 263,
+      "path": "tests/unit/src/test_datanode.cpp",
+      "size": 10359
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 247,
+      "path": "source/ShipJumpNavigation.cpp",
+      "size": 10387
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 184,
+      "path": "source/Wormhole.cpp",
+      "size": 6037
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 163,
+      "path": "source/DialogSettings.cpp",
+      "size": 5201
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 159,
+      "path": "source/ScrollArea.cpp",
+      "size": 4240
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 145,
+      "path": "source/ConditionsStore.cpp",
+      "size": 5436
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 132,
+      "path": "source/Radar.cpp",
+      "size": 4945
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 118,
+      "path": "source/shader/BatchShader.cpp",
+      "size": 4303
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 110,
+      "path": "source/Hazard.cpp",
+      "size": 3809
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 97,
+      "path": "source/Confusion.cpp",
+      "size": 3055
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 5,
+      "language": "C++",
+      "loc": 56,
+      "path": "source/audio/Music.cpp",
+      "size": 2099
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 502,
+      "path": "source/Gamerules.cpp",
+      "size": 18550
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 457,
+      "path": "source/image/ImageBuffer.cpp",
+      "size": 17403
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 360,
+      "path": "source/Account.cpp",
+      "size": 11508
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 193,
+      "path": "source/Phrase.cpp",
+      "size": 6692
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 179,
+      "path": "source/ConditionAssignments.cpp",
+      "size": 6192
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 154,
+      "path": "source/audio/Sound.cpp",
+      "size": 5086
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 152,
+      "path": "source/CaptureOdds.cpp",
+      "size": 6648
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 136,
+      "path": "source/News.cpp",
+      "size": 4661
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 94,
+      "path": "source/TextArea.cpp",
+      "size": 2804
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 92,
+      "path": "source/TableArea.cpp",
+      "size": 2752
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 73,
+      "path": "source/Variant.cpp",
+      "size": 2432
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 62,
+      "path": "source/Logger.cpp",
+      "size": 2152
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 57,
+      "path": "source/Paragraphs.cpp",
+      "size": 1904
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 52,
+      "path": "source/Visual.cpp",
+      "size": 2024
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 48,
+      "path": "source/RaidFleet.cpp",
+      "size": 1833
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 4,
+      "language": "C++",
+      "loc": 36,
+      "path": "source/LoadingCircle.cpp",
+      "size": 1442
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 924,
+      "path": "tests/unit/src/text/test_format.cpp",
+      "size": 45886
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 434,
+      "path": "source/image/Mask.cpp",
+      "size": 15186
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 409,
+      "path": "source/Files.cpp",
+      "size": 13306
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 338,
+      "path": "source/FormationPattern.cpp",
+      "size": 11862
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 278,
+      "path": "source/DataNode.cpp",
+      "size": 9025
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 262,
+      "path": "source/text/WrappedText.cpp",
+      "size": 8681
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 255,
+      "path": "source/ship/ResourceLevels.cpp",
+      "size": 8924
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 192,
+      "path": "source/DataFile.cpp",
+      "size": 6582
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 180,
+      "path": "source/orders/OrderSet.cpp",
+      "size": 7817
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 173,
+      "path": "tests/unit/src/test_datawriter.cpp",
+      "size": 5844
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 158,
+      "path": "source/Mortgage.cpp",
+      "size": 5328
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 155,
+      "path": "tests/unit/src/test_distance_calculation_settings.cpp",
+      "size": 6924
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 153,
+      "path": "tests/unit/src/test_formationPattern.cpp",
+      "size": 4990
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 150,
+      "path": "source/Angle.cpp",
+      "size": 5437
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 150,
+      "path": "tests/unit/src/test_categoryList.cpp",
+      "size": 7535
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 149,
+      "path": "source/EsUuid.cpp",
+      "size": 4556
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 125,
+      "path": "source/Messages.cpp",
+      "size": 4235
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 115,
+      "path": "source/DataWriter.cpp",
+      "size": 3640
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 111,
+      "path": "source/ScrollBar.cpp",
+      "size": 4102
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 104,
+      "path": "source/image/MaskManager.cpp",
+      "size": 4004
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 99,
+      "path": "source/Swizzle.cpp",
+      "size": 3033
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 87,
+      "path": "source/Effect.cpp",
+      "size": 2978
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 85,
+      "path": "source/TextReplacements.cpp",
+      "size": 3190
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 78,
+      "path": "source/StellarObjectSpriteData.cpp",
+      "size": 2436
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 66,
+      "path": "source/windows/WinWindow.cpp",
+      "size": 2909
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 63,
+      "path": "source/image/ImageFileData.cpp",
+      "size": 2491
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 62,
+      "path": "source/Distribution.cpp",
+      "size": 2470
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 46,
+      "path": "source/Galaxy.cpp",
+      "size": 1640
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 39,
+      "path": "source/image/SpriteSet.cpp",
+      "size": 1429
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 37,
+      "path": "source/ShipNameDialogPanel.cpp",
+      "size": 1643
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 3,
+      "language": "C++",
+      "loc": 31,
+      "path": "tests/unit/src/helpers/datanode-factory.cpp",
+      "size": 1359
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 865,
+      "path": "source/text/Format.cpp",
+      "size": 28020
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 573,
+      "path": "tests/unit/src/test_conditionsStore.cpp",
+      "size": 22190
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 488,
+      "path": "tests/unit/src/test_point.cpp",
+      "size": 15203
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 407,
+      "path": "tests/unit/src/test_weightedList.cpp",
+      "size": 14753
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 270,
+      "path": "source/Date.cpp",
+      "size": 8227
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 270,
+      "path": "source/ship/ShipAttributeCache.cpp",
+      "size": 14887
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 168,
+      "path": "source/audio/player/AudioPlayer.cpp",
+      "size": 5020
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 149,
+      "path": "tests/unit/src/test_set.cpp",
+      "size": 4932
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 148,
+      "path": "source/InfoPanelState.cpp",
+      "size": 4782
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 140,
+      "path": "source/Plugin.cpp",
+      "size": 4703
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 136,
+      "path": "tests/unit/src/test_firecommand.cpp",
+      "size": 5301
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 135,
+      "path": "tests/unit/src/test_bitset.cpp",
+      "size": 4654
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 132,
+      "path": "tests/unit/src/test_scrollVar.cpp",
+      "size": 4725
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 126,
+      "path": "source/Screen.cpp",
+      "size": 3219
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 115,
+      "path": "tests/unit/src/test_angle.cpp",
+      "size": 5760
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 114,
+      "path": "source/shader/Shader.cpp",
+      "size": 3690
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 103,
+      "path": "source/ZipFile.cpp",
+      "size": 4048
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 102,
+      "path": "source/Information.cpp",
+      "size": 3298
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 96,
+      "path": "source/audio/supplier/FlacSupplier.cpp",
+      "size": 3792
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 94,
+      "path": "tests/unit/src/test_ship.cpp",
+      "size": 4050
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 86,
+      "path": "tests/unit/src/test_exclusiveItem.cpp",
+      "size": 3117
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 78,
+      "path": "source/Dictionary.cpp",
+      "size": 2589
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 77,
+      "path": "source/RoutePlan.cpp",
+      "size": 2606
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 75,
+      "path": "tests/unit/src/text/test_layout.cpp",
+      "size": 2879
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 66,
+      "path": "source/CategoryList.cpp",
+      "size": 2562
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 65,
+      "path": "source/Camera.cpp",
+      "size": 2770
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 65,
+      "path": "tests/unit/src/test_dictionary.cpp",
+      "size": 2280
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 63,
+      "path": "source/Endpoint.cpp",
+      "size": 2019
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 59,
+      "path": "tests/unit/src/test_stringInterner.cpp",
+      "size": 2631
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 55,
+      "path": "source/audio/supplier/WavSupplier.cpp",
+      "size": 2181
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 53,
+      "path": "source/Trade.cpp",
+      "size": 1790
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 53,
+      "path": "tests/unit/src/test_random.cpp",
+      "size": 2255
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 52,
+      "path": "tests/unit/src/test_account.cpp",
+      "size": 2017
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 52,
+      "path": "tests/unit/src/text/test_alignment.cpp",
+      "size": 2226
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 52,
+      "path": "tests/unit/src/text/test_truncate.cpp",
+      "size": 2221
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 49,
+      "path": "source/DistanceCalculationSettings.cpp",
+      "size": 1883
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 48,
+      "path": "source/ShipEvent.cpp",
+      "size": 1639
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 38,
+      "path": "source/windows/WinVersion.cpp",
+      "size": 1548
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 36,
+      "path": "source/Caret.cpp",
+      "size": 1179
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 27,
+      "path": "source/text/FontSet.cpp",
+      "size": 1011
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 2,
+      "language": "C++",
+      "loc": 23,
+      "path": "tests/unit/src/test_main.cpp",
+      "size": 1062
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 316,
+      "path": "source/Point.cpp",
+      "size": 7289
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 154,
+      "path": "source/TaskQueue.cpp",
+      "size": 5081
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 145,
+      "path": "source/Rectangle.cpp",
+      "size": 5212
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 126,
+      "path": "source/text/Utf8.cpp",
+      "size": 3982
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 115,
+      "path": "source/ConditionEntry.cpp",
+      "size": 3740
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 111,
+      "path": "source/audio/supplier/Mp3Supplier.cpp",
+      "size": 3840
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 100,
+      "path": "source/Color.cpp",
+      "size": 2939
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 97,
+      "path": "source/Random.cpp",
+      "size": 3072
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 93,
+      "path": "source/audio/supplier/AsyncAudioSupplier.cpp",
+      "size": 2978
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 90,
+      "path": "source/audio/supplier/effect/Fade.cpp",
+      "size": 3444
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 86,
+      "path": "source/FireCommand.cpp",
+      "size": 2920
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 85,
+      "path": "tests/unit/src/text/test_displaytext.cpp",
+      "size": 4018
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 83,
+      "path": "source/Bitset.cpp",
+      "size": 2713
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 82,
+      "path": "source/FrameTimer.cpp",
+      "size": 3226
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 73,
+      "path": "source/opengl.cpp",
+      "size": 2330
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 63,
+      "path": "tests/unit/src/comparators/test_byGivenOrder.cpp",
+      "size": 2522
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 61,
+      "path": "source/windows/WinConsole.cpp",
+      "size": 2194
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 55,
+      "path": "source/audio/supplier/AudioSupplier.cpp",
+      "size": 2000
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 54,
+      "path": "source/text/Clipboard.cpp",
+      "size": 2102
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 47,
+      "path": "source/Collision.cpp",
+      "size": 1629
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 45,
+      "path": "source/orders/Orders.cpp",
+      "size": 1430
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 44,
+      "path": "source/CustomEvents.cpp",
+      "size": 1444
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 42,
+      "path": "source/OptionalInputDialogPanel.cpp",
+      "size": 1623
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 40,
+      "path": "tests/unit/src/comparators/test_byName.cpp",
+      "size": 1714
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 38,
+      "path": "source/StringInterner.cpp",
+      "size": 1525
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 34,
+      "path": "tests/unit/src/helpers/logger-output.cpp",
+      "size": 1327
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 33,
+      "path": "source/audio/player/MusicPlayer.cpp",
+      "size": 1293
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 29,
+      "path": "source/test/TestContext.cpp",
+      "size": 1293
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 29,
+      "path": "source/text/DisplayText.cpp",
+      "size": 1103
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 27,
+      "path": "source/RouteEdge.cpp",
+      "size": 1182
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 25,
+      "path": "source/windows/TimerResolutionGuard.cpp",
+      "size": 1122
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 21,
+      "path": "source/GameVersion.cpp",
+      "size": 948
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 1,
+      "language": "C++",
+      "loc": 16,
+      "path": "source/orders/OrderSingle.cpp",
+      "size": 773
+    }
+  ],
+  "top_fan_in": [
+    {
+      "fan_in": 109,
+      "fan_out": 6,
+      "language": "C Header",
+      "loc": 173,
+      "path": "source/GameData.h",
+      "size": 6934
+    },
+    {
+      "fan_in": 79,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 116,
+      "path": "source/Point.h",
+      "size": 3704
+    },
+    {
+      "fan_in": 78,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 83,
+      "path": "source/DataNode.h",
+      "size": 4295
+    },
+    {
+      "fan_in": 64,
+      "fan_out": 18,
+      "language": "C Header",
+      "loc": 689,
+      "path": "source/Ship.h",
+      "size": 31249
+    },
+    {
+      "fan_in": 61,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 163,
+      "path": "source/text/Format.h",
+      "size": 8606
+    },
+    {
+      "fan_in": 55,
+      "fan_out": 14,
+      "language": "C Header",
+      "loc": 529,
+      "path": "source/PlayerInfo.h",
+      "size": 26220
+    },
+    {
+      "fan_in": 50,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 54,
+      "path": "source/Color.h",
+      "size": 2765
+    },
+    {
+      "fan_in": 48,
+      "fan_out": 6,
+      "language": "C Header",
+      "loc": 246,
+      "path": "source/System.h",
+      "size": 11153
+    },
+    {
+      "fan_in": 48,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 55,
+      "path": "source/Screen.h",
+      "size": 2108
+    },
+    {
+      "fan_in": 45,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 95,
+      "path": "source/UI.h",
+      "size": 3798
+    },
+    {
+      "fan_in": 44,
+      "fan_out": 1,
+      "language": "C Header",
+      "loc": 63,
+      "path": "source/image/Sprite.h",
+      "size": 3018
+    },
+    {
+      "fan_in": 44,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 275,
+      "path": "source/Preferences.h",
+      "size": 8700
+    },
+    {
+      "fan_in": 43,
+      "fan_out": 5,
+      "language": "C Header",
+      "loc": 199,
+      "path": "source/Planet.h",
+      "size": 8888
+    },
+    {
+      "fan_in": 41,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 122,
+      "path": "source/DataWriter.h",
+      "size": 5419
+    },
+    {
+      "fan_in": 40,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 25,
+      "path": "source/image/SpriteSet.h",
+      "size": 1281
+    },
+    {
+      "fan_in": 38,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 41,
+      "path": "source/Logger.h",
+      "size": 1719
+    },
+    {
+      "fan_in": 38,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 21,
+      "path": "source/text/FontSet.h",
+      "size": 1028
+    },
+    {
+      "fan_in": 37,
+      "fan_out": 0,
+      "language": "C Header",
+      "loc": 36,
+      "path": "source/Random.h",
+      "size": 1952
+    },
+    {
+      "fan_in": 34,
+      "fan_out": 2,
+      "language": "C Header",
+      "loc": 69,
+      "path": "source/text/Font.h",
+      "size": 3373
+    },
+    {
+      "fan_in": 33,
+      "fan_out": 4,
+      "language": "C Header",
+      "loc": 221,
+      "path": "source/Government.h",
+      "size": 10233
+    }
+  ],
+  "top_fan_out": [
+    {
+      "fan_in": 0,
+      "fan_out": 61,
+      "language": "C++",
+      "loc": 2752,
+      "path": "source/Engine.cpp",
+      "size": 110457
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 53,
+      "language": "C++",
+      "loc": 700,
+      "path": "source/GameData.cpp",
+      "size": 21280
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 44,
+      "language": "C++",
+      "loc": 1256,
+      "path": "source/MapPanel.cpp",
+      "size": 46122
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 40,
+      "language": "C++",
+      "loc": 961,
+      "path": "source/MapDetailPanel.cpp",
+      "size": 37042
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 39,
+      "language": "C++",
+      "loc": 4736,
+      "path": "source/PlayerInfo.cpp",
+      "size": 178260
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 37,
+      "language": "C++",
+      "loc": 4754,
+      "path": "source/AI.cpp",
+      "size": 192651
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 37,
+      "language": "C++",
+      "loc": 622,
+      "path": "source/main.cpp",
+      "size": 23684
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 36,
+      "language": "C++",
+      "loc": 4306,
+      "path": "source/Ship.cpp",
+      "size": 157406
+    },
+    {
+      "fan_in": 3,
+      "fan_out": 35,
+      "language": "C Header",
+      "loc": 139,
+      "path": "source/UniverseObjects.h",
+      "size": 5062
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 35,
+      "language": "C++",
+      "loc": 527,
+      "path": "source/PlanetPanel.cpp",
+      "size": 19040
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 32,
+      "language": "C++",
+      "loc": 1286,
+      "path": "source/ShopPanel.cpp",
+      "size": 41287
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 30,
+      "language": "C++",
+      "loc": 1440,
+      "path": "source/PreferencesPanel.cpp",
+      "size": 47355
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 30,
+      "language": "C++",
+      "loc": 1035,
+      "path": "source/MissionPanel.cpp",
+      "size": 34788
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 29,
+      "language": "C++",
+      "loc": 780,
+      "path": "source/ShipInfoPanel.cpp",
+      "size": 28571
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 29,
+      "language": "C++",
+      "loc": 508,
+      "path": "source/ConversationPanel.cpp",
+      "size": 19301
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 28,
+      "language": "C++",
+      "loc": 816,
+      "path": "source/PlayerInfoPanel.cpp",
+      "size": 29624
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 28,
+      "language": "C++",
+      "loc": 551,
+      "path": "source/LoadPanel.cpp",
+      "size": 19223
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 28,
+      "language": "C++",
+      "loc": 390,
+      "path": "source/MapSalesPanel.cpp",
+      "size": 13839
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 28,
+      "language": "C++",
+      "loc": 285,
+      "path": "source/StartConditionsPanel.cpp",
+      "size": 11637
+    },
+    {
+      "fan_in": 0,
+      "fan_out": 27,
+      "language": "C++",
+      "loc": 1232,
+      "path": "source/OutfitterPanel.cpp",
+      "size": 52796
+    }
+  ],
+  "version": 2
+}

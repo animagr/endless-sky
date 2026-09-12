@@ -1,0 +1,67 @@
+{
+  "artifact_bytes": {
+    "context.json": 1179994,
+    "hubs.json": 91853,
+    "report.html": 760669,
+    "summary.md": 3977,
+    "symbols.json": 1235565
+  },
+  "artifact_dir": "C:\\Claude\\Testing\\endless-sky\\.codemapy",
+  "counts": {
+    "cycles": 0,
+    "doc_files": 240,
+    "external_references": 1039,
+    "files": 529,
+    "internal_dependencies": 2661,
+    "loc": 104463,
+    "metadata_files": 4,
+    "symbols": 3582
+  },
+  "files": {
+    "context": "context.json",
+    "hubs": "hubs.json",
+    "manifest": "manifest.json",
+    "report": "report.html",
+    "summary": "summary.md",
+    "symbols": "symbols.json"
+  },
+  "generated_at": "2026-09-12T15:31:04.096945+00:00",
+  "git_commit": "722016003fcc94552fc66f7d8d82f6dbda561255",
+  "git_dirty": false,
+  "languages": {
+    "C Header": 258,
+    "C++": 258,
+    "C++ Header": 2,
+    "Python": 4,
+    "Shell": 7
+  },
+  "metadata_files": [
+    {
+      "kind": "project-metadata",
+      "loc": 337,
+      "path": "CMakeLists.txt",
+      "size": 16437
+    },
+    {
+      "kind": "project-config",
+      "loc": 974,
+      "path": "CMakePresets.json",
+      "size": 23477
+    },
+    {
+      "kind": "project-metadata",
+      "loc": 499,
+      "path": "source/CMakeLists.txt",
+      "size": 9323
+    },
+    {
+      "kind": "project-metadata",
+      "loc": 113,
+      "path": "tests/CMakeLists.txt",
+      "size": 5767
+    }
+  ],
+  "notes": [],
+  "root": "C:\\Claude\\Testing\\endless-sky",
+  "version": 2
+}

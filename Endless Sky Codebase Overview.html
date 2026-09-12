@@ -1,0 +1,702 @@
+<title>How Endless Sky Works</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #faf7f0;
+  --bg-raised: #ffffff;
+  --bg-overlay: #ffffff;
+  --bg-inset: #f6f7f8;
+  --paper-inset: #f2eee3;
+  --border: #ebedf0;
+  --border-strong: #d4d4d4;
+  --text: #222222;
+  --text-muted: #707070;
+  --text-faint: #ababab;
+  --text-on-accent: #ffffff;
+  --accent: #4c8ce5;
+  --accent-hover: #3a72c4;
+  --selection: hsla(215, 75%, 60%, 0.22);
+  --highlight: rgba(255, 208, 0, 0.4);
+  --success: #0cb54f;
+  --warning: #d96c00;
+  --error: #e4374b;
+  --info: #086ddd;
+  --red: #e4374b;
+  --orange: #d96c00;
+  --yellow: #bd8e37;
+  --green: #0cb54f;
+  --cyan: #2db7b5;
+  --blue: #086ddd;
+  --purple: #876be0;
+  --pink: #c32b74;
+  --code-bg: #e8e2d4;
+  --code-border: #d6d0c2;
+  --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.028), 0 3.4px 6.7px rgba(0, 0, 0, 0.042),
+              0 15px 30px rgba(0, 0, 0, 0.07);
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Ubuntu, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", Menlo, SFMono-Regular, Consolas, "Roboto Mono", monospace;
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --radius-l: 10px;
+}
+
+* { box-sizing: border-box; }
+::selection { background: var(--selection); }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text);
+       font-family: var(--font-ui); font-size: 1rem; line-height: 1.5; }
+
+/* layout */
+.layout { display: flex; max-width: 1280px; margin: 0 auto; }
+nav.toc { position: sticky; top: 0; align-self: flex-start; width: 250px; flex: 0 0 250px;
+          max-height: 100vh; overflow-y: auto; padding: 28px 16px 40px 24px;
+          font-size: 0.85rem; border-right: 1px solid var(--border-strong); }
+nav.toc .toc-title { font-weight: 600; color: var(--text-faint); text-transform: uppercase;
+                     letter-spacing: 0.08em; font-size: 0.72rem; margin-bottom: 10px; }
+nav.toc ol { list-style: none; margin: 0; padding: 0; }
+nav.toc a { display: block; padding: 4px 8px; color: var(--text-muted); text-decoration: none;
+            border-radius: var(--radius-s); }
+nav.toc a:hover { color: var(--accent); background: var(--paper-inset); }
+nav.toc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+nav.toc a .num { color: var(--text-faint); font-family: var(--font-mono);
+                 font-size: 0.75rem; margin-right: 6px; }
+main { flex: 1; min-width: 0; padding: 40px 48px 96px; max-width: 860px; }
+@media (max-width: 900px) {
+  .layout { flex-direction: column; }
+  nav.toc { position: static; width: auto; flex: none; max-height: none;
+            border-right: none; border-bottom: 1px solid var(--border-strong); }
+  main { padding: 24px 20px 64px; }
+}
+
+/* cover */
+header.cover { border-bottom: 3px double var(--border-strong);
+               padding-bottom: 20px; margin-bottom: 32px; }
+header.cover h1 { font-size: 1.9rem; margin: 0 0 6px; line-height: 1.15; text-wrap: balance; }
+header.cover .subtitle { color: var(--text-muted); font-size: 1.05rem; margin: 0 0 12px; }
+header.cover .meta { color: var(--text-faint); font-size: 0.8rem; font-family: var(--font-mono); }
+
+/* typography */
+h2 { font-size: 1.5rem; font-weight: 600; color: var(--text); margin: 3rem 0 0.8rem;
+     padding-bottom: 0.3rem; border-bottom: 1px solid var(--border-strong); text-wrap: balance; }
+h2 .secnum { color: var(--accent); font-family: var(--font-mono);
+             font-size: 1.1rem; margin-right: 10px; }
+h3 { font-size: 1.2rem; font-weight: 600; color: var(--accent); margin: 2rem 0 0.6rem; text-wrap: balance; }
+h4 { font-size: 1.1rem; font-weight: 600; color: var(--yellow); margin: 1.5rem 0 0.5rem; }
+h5 { font-size: 1rem; font-weight: 600; color: var(--red); margin: 1.2rem 0 0.4rem; }
+h6 { font-size: 0.9rem; font-weight: 600; color: var(--text-muted); margin: 1.2rem 0 0.4rem; }
+p { margin: 0.7em 0; }
+strong { color: var(--pink); font-weight: 600; }
+em { color: var(--pink); }
+a { color: var(--accent); text-decoration: underline; }
+a:hover { color: var(--accent-hover); }
+hr { border: none; border-top: 1px solid var(--border-strong); margin: 2.5rem 0; }
+ul, ol { padding-left: 1.5em; margin: 0.7em 0; }
+li { margin: 0.25em 0; }
+
+blockquote { margin: 1em 0; padding: 0.6em 1em; border-left: 3px solid var(--green);
+             color: var(--green); background: var(--bg-raised);
+             border-radius: 0 var(--radius-s) var(--radius-s) 0; box-shadow: var(--shadow-s); }
+blockquote p { margin: 0.3em 0; }
+
+.callout { margin: 1em 0; padding: 0.7em 1em; border-left: 3px solid var(--warning);
+           background: var(--bg-raised); border-radius: 0 var(--radius-s) var(--radius-s) 0;
+           font-size: 0.95rem; box-shadow: var(--shadow-s); }
+.callout.warn { border-left-color: var(--error); }
+.callout .co-label { font-weight: 600; font-size: 0.78rem; letter-spacing: 0.06em;
+                     text-transform: uppercase; display: block; margin-bottom: 2px;
+                     color: var(--warning); }
+.callout.warn .co-label { color: var(--error); }
+
+/* code */
+code { font-family: var(--font-mono); font-size: 0.86em; background: var(--code-bg);
+       padding: 0.08em 0.35em; border-radius: var(--radius-s); color: var(--text); }
+pre { background: var(--code-bg); border: 1px solid var(--code-border);
+      border-radius: var(--radius-m); padding: 12px 16px; overflow-x: auto;
+      margin: 0.9em 0; line-height: 1.45; }
+pre code { background: none; padding: 0; font-size: 0.82rem; display: block; }
+pre .c { color: var(--text-muted); font-style: italic; }
+pre .k { color: var(--purple); font-weight: 600; }
+pre .n { color: var(--orange); }
+pre .p { color: var(--blue); }
+pre .m { color: var(--yellow); font-weight: 600; }
+
+/* tables */
+.tablewrap { overflow-x: auto; margin: 0.9em 0; }
+table { border-collapse: collapse; width: 100%; font-size: 0.88rem;
+        background: var(--bg-raised); border: 1px solid var(--border-strong);
+        box-shadow: var(--shadow-s); }
+th { text-align: left; background: var(--bg-inset); font-weight: 600; padding: 7px 10px;
+     border: 1px solid var(--border-strong); white-space: nowrap; }
+td { padding: 6px 10px; border: 1px solid var(--border); vertical-align: top; }
+td code, th code { background: var(--code-bg); }
+tbody tr:hover { background: var(--bg-inset); }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* figures and diagrams */
+figure.fig { margin: 1.5em 0; padding: 20px 20px 14px; background: var(--bg-raised);
+             border: 1px solid var(--border-strong); border-radius: var(--radius-m);
+             box-shadow: var(--shadow-s); }
+figure.fig svg { display: block; width: 100%; max-width: 100%; height: auto;
+                 font-family: var(--font-ui); color: var(--text); }
+figure.fig figcaption { margin-top: 12px; padding-top: 10px; font-size: 0.84rem;
+                        color: var(--text-muted); border-top: 1px solid var(--border); }
+.d-box   { fill: var(--bg-raised); stroke: var(--border-strong); stroke-width: 1.5; }
+.d-gate  { fill: #eaf2fd; stroke: var(--accent); stroke-width: 2; }
+.d-state { fill: var(--paper-inset); stroke: var(--border-strong); stroke-width: 1.5; }
+.d-inner { fill: var(--bg-raised); stroke: var(--border); stroke-width: 1; }
+.d-run   { fill: #eaf2fd; stroke: var(--accent); stroke-width: 1.5; }
+.d-idle  { fill: none; stroke: var(--border-strong); stroke-width: 1;
+           stroke-dasharray: 4 4; }
+.d-tick  { fill: var(--paper-inset); stroke: var(--border-strong); stroke-width: 1; }
+.d-t     { fill: var(--text); font-size: 13px; font-weight: 600; }
+.d-ts    { fill: var(--text-muted); font-size: 11px; }
+.d-te    { fill: var(--text-muted); font-size: 11px; font-style: italic; }
+.d-ta    { fill: var(--accent); font-size: 11px; font-weight: 600; }
+.d-edge  { stroke: var(--text-muted); stroke-width: 1.5; fill: none; }
+.d-edgeA { stroke: var(--accent); stroke-width: 2; fill: none; }
+.d-dash  { stroke-dasharray: 5 4; }
+.d-head  { fill: var(--text-muted); }
+.d-headA { fill: var(--accent); }
+.d-lead  { stroke: var(--border-strong); stroke-width: 1; }
+
+/* chips */
+.chip { display: inline-block; padding: 0 8px; border-radius: 999px;
+        font-size: 0.75rem; font-weight: 600; }
+.chip.ok  { background: #bde1d3; color: #1d694b; }
+.chip.no  { background: #f5d1d5; color: #94222e; }
+.chip.mid { background: #ede3cf; color: #7a5a20; }
+
+@media print {
+  nav.toc { display: none; }
+  main { max-width: none; padding: 0; }
+  table, blockquote, .callout { box-shadow: none; }
+  pre { white-space: pre-wrap; }
+  h2 { break-after: avoid; }
+  table, pre { break-inside: avoid; }
+}
+</style>
+
+<div class="layout">
+<nav class="toc" aria-label="Table of contents">
+  <div class="toc-title">Contents</div>
+  <ol>
+    <li><a href="#sec1"><span class="num">1</span>What kind of program this is</a></li>
+    <li><a href="#sec2"><span class="num">2</span>The lay of the land</a></li>
+    <li><a href="#sec3"><span class="num">3</span>One text format, for everything</a></li>
+    <li><a href="#sec4"><span class="num">4</span>How a universe assembles itself</a></li>
+    <li><a href="#sec5"><span class="num">5</span>Conditions: the seam</a></li>
+    <li><a href="#sec6"><span class="num">6</span>Missions</a></li>
+    <li><a href="#sec7"><span class="num">7</span>Two loops, one step apart</a></li>
+    <li><a href="#sec8"><span class="num">8</span>Panels all the way down</a></li>
+    <li><a href="#sec9"><span class="num">9</span>Ships, angles and collisions</a></li>
+    <li><a href="#sec10"><span class="num">10</span>The artwork is data too</a></li>
+    <li><a href="#sec11"><span class="num">11</span>Saving and plugins</a></li>
+    <li><a href="#sec12"><span class="num">12</span>Building and checking</a></li>
+    <li><a href="#sec13"><span class="num">13</span>Where to start reading</a></li>
+  </ol>
+</nav>
+<main>
+<header class="cover">
+  <h1>How Endless Sky Works</h1>
+  <p class="subtitle">A plain-language tour of a space sandbox that ships twice as much text as code &mdash; written for programmers who have never touched C++ or this codebase.</p>
+  <p class="meta">endless-sky 0.11.3 &middot; 481 source files &middot; 204 data files &middot; C++20 &middot; read from this checkout</p>
+</header>
+
+<p>Endless Sky is a 2D space sandbox in the lineage of <em>Escape Velocity</em>: you start with a small ship and a large loan, and trade, fight, explore or follow a storyline from there. This page is about the <strong>program</strong>, not the game &mdash; how it is organised, and why.</p>
+
+<p>You do not need to know C++. Where a C++ idiom matters, it is explained in passing. What you do need is to accept one inversion early, because nearly every design decision in this codebase follows from it.</p>
+
+<h2 id="sec1"><span class="secnum">1</span>What kind of program this is</h2>
+
+<p>Open the repository and count lines. There are about <strong>120,000 lines of C++</strong> under <code>source/</code>. There are about <strong>262,000 lines of plain text</strong> under <code>data/</code>. The content outweighs the engine more than two to one, and that ratio is the architecture in one number.</p>
+
+<blockquote>
+<p>The C++ does not know what a Kestrel is. It does not know that Earth exists, that the Republic is at war, or that a jump drive lets you leave the hyperspace network. Every one of those is a line of text parsed at startup. The program is an interpreter; the universe is its input.</p>
+</blockquote>
+
+<p>This is not a mod system bolted onto a finished game. It is the only way the game is built: the official campaign loads through exactly the same path a third-party plugin uses, from exactly the same file format, with no privileged position of any kind. A plugin is simply another directory handed to the same loader.</p>
+
+<p>That single decision explains most of what follows. It is why definitions are looked up by name rather than by pointer or index; why redefining something <em>merges</em> into it rather than replacing it; why the game carries a general-purpose "conditions" namespace that looks over-engineered until you realise data files need some way to ask the engine questions; and why the file format has to stay readable enough for a writer with no programming background to work in all day.</p>
+
+<h3>The shape of the whole program</h3>
+
+<p>Three sources of definitions, one loader, one shared universe, and a strict discipline about who may write to it once loading is done.</p>
+
+<figure class="fig">
+<svg viewBox="0 0 780 530" role="img" aria-label="Architecture diagram: the base data directory, player plugins and a saved game all feed one parser, which fills a single global store of named definitions; the engine reads and advances it, game events rewrite it, and the interface only reads it.">
+  <defs>
+    <marker id="a1" viewBox="0 0 9 9" refX="8" refY="4.5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0.5 L8.5,4.5 L0,8.5 z" class="d-head"/>
+    </marker>
+    <marker id="a1a" viewBox="0 0 9 9" refX="8" refY="4.5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0.5 L8.5,4.5 L0,8.5 z" class="d-headA"/>
+    </marker>
+  </defs>
+
+  <rect x="20"  y="16" width="220" height="52" rx="6" class="d-box"/>
+  <text x="130" y="39" text-anchor="middle" class="d-t">data/</text>
+  <text x="130" y="56" text-anchor="middle" class="d-ts">the shipped game &middot; 204 files</text>
+
+  <rect x="280" y="16" width="220" height="52" rx="6" class="d-box"/>
+  <text x="390" y="39" text-anchor="middle" class="d-t">Plugins</text>
+  <text x="390" y="56" text-anchor="middle" class="d-ts">player folders, same format</text>
+
+  <rect x="540" y="16" width="220" height="52" rx="6" class="d-box"/>
+  <text x="650" y="39" text-anchor="middle" class="d-t">Saved game</text>
+  <text x="650" y="56" text-anchor="middle" class="d-ts">also the same format</text>
+
+  <path d="M130,68 L130,128" class="d-edge" marker-end="url(#a1)"/>
+  <path d="M390,68 L390,128" class="d-edge" marker-end="url(#a1)"/>
+  <path d="M650,68 L650,128" class="d-edge" marker-end="url(#a1)"/>
+  <text x="399" y="102" class="d-ts">one parser, no special cases</text>
+
+  <rect x="20" y="128" width="740" height="62" rx="6" class="d-gate"/>
+  <text x="390" y="152" text-anchor="middle" class="d-t">DataFile &#8594; DataNode &#8594; Load()</text>
+  <text x="390" y="172" text-anchor="middle" class="d-ta">indentation is structure &middot; the first token says what kind of thing this is</text>
+
+  <path d="M390,190 L390,236" class="d-edgeA" marker-end="url(#a1a)"/>
+  <text x="399" y="216" class="d-ta">fills in, never replaces</text>
+
+  <rect x="20" y="236" width="740" height="128" rx="6" class="d-state"/>
+  <text x="390" y="262" text-anchor="middle" class="d-t">GameData &middot; UniverseObjects</text>
+  <text x="390" y="280" text-anchor="middle" class="d-ts">one Set per kind of thing, alive for the whole process</text>
+
+  <rect x="48" y="292" width="330" height="52" rx="5" class="d-inner"/>
+  <text x="213" y="313" text-anchor="middle" class="d-t">Everything is keyed by name</text>
+  <text x="213" y="330" text-anchor="middle" class="d-ts">916 ships &middot; 937 outfits &middot; 694 systems</text>
+
+  <rect x="402" y="292" width="330" height="52" rx="5" class="d-inner"/>
+  <text x="567" y="313" text-anchor="middle" class="d-t">Pointers are handed out early</text>
+  <text x="567" y="330" text-anchor="middle" class="d-ts">before the thing is even defined</text>
+
+  <path d="M140,442 L140,364" class="d-edge" marker-end="url(#a1)"/>
+  <text x="140" y="392" text-anchor="middle" class="d-ts">reads it, and advances</text>
+  <text x="140" y="408" text-anchor="middle" class="d-ts">the ships inside it</text>
+
+  <path d="M390,442 L390,370" class="d-edge" marker-end="url(#a1)" marker-start="url(#a1)"/>
+  <text x="390" y="392" text-anchor="middle" class="d-ts">the only thing that writes</text>
+  <text x="390" y="408" text-anchor="middle" class="d-ts">after load &middot; Revert() undoes it</text>
+
+  <path d="M640,364 L640,442" class="d-edge d-dash" marker-end="url(#a1)"/>
+  <text x="640" y="392" text-anchor="middle" class="d-te">reads only &mdash;</text>
+  <text x="640" y="408" text-anchor="middle" class="d-te">never writes</text>
+
+  <rect x="20"  y="442" width="240" height="52" rx="6" class="d-box"/>
+  <text x="140" y="465" text-anchor="middle" class="d-t">Engine</text>
+  <text x="140" y="482" text-anchor="middle" class="d-ts">one star system at a time</text>
+
+  <rect x="270" y="442" width="240" height="52" rx="6" class="d-box"/>
+  <text x="390" y="465" text-anchor="middle" class="d-t">Game events</text>
+  <text x="390" y="482" text-anchor="middle" class="d-ts">rewrite the universe mid-game</text>
+
+  <rect x="520" y="442" width="240" height="52" rx="6" class="d-box"/>
+  <text x="640" y="465" text-anchor="middle" class="d-t">Panels</text>
+  <text x="640" y="482" text-anchor="middle" class="d-ts">menus, shops, map, flight</text>
+</svg>
+<figcaption>The asymmetry to notice is the middle arrow. A story can permanently change the universe &mdash; a war ends, a planet changes government, a wormhole opens &mdash; so game events are allowed to edit the loaded definitions in place. That is also why the store must be able to rewind: <code>GameData::Revert()</code> restores the pristine universe before another pilot's events are applied, because your second character did not fight your first character's war.</figcaption>
+</figure>
+
+<h2 id="sec2"><span class="secnum">2</span>The lay of the land</h2>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Measure</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>C++ source files</td><td class="num">481 &mdash; about 120,000 lines</td></tr>
+<tr><td>Game content files</td><td class="num">204 &mdash; about 262,000 lines</td></tr>
+<tr><td>Artwork and audio</td><td class="num">6,918 images &middot; 247 sounds</td></tr>
+<tr><td>Language</td><td>C++20, built with CMake, on SDL2 + OpenGL</td></tr>
+<tr><td>Largest source file</td><td><code>PlayerInfo.cpp</code> &mdash; 5,624 lines</td></tr>
+<tr><td>Largest data file</td><td><code>data/map systems.txt</code> &mdash; 36,312 lines</td></tr>
+<tr><td>Most-included header</td><td><code>GameData.h</code> &mdash; pulled in by 95 files</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>C++ in sixty seconds, if you need it</h3>
+
+<p>C++ splits code across two kinds of file. A <strong>header</strong> (<code>.h</code>) declares what exists &mdash; names, types, shapes &mdash; and other files "include" it to learn about them. A <strong>source file</strong> (<code>.cpp</code>) holds the implementation. Including a header is a literal textual paste, which is why <code>GameData.h</code> appearing in 95 files makes it expensive to change.</p>
+
+<p>One more C++ fact bites constantly here: <strong>nothing is discovered automatically</strong>. Every source file must be listed by hand in the build configuration, or it is silently never compiled &mdash; no error, no warning, just a missing symbol much later. This project guards that with a dedicated script, precisely because the failure mode is invisible.</p>
+
+<h3>Where things live</h3>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Directory</th><th>What is in it</th></tr></thead>
+<tbody>
+<tr><td><code>source/</code></td><td>All engine code. The subdirectories below sit inside it; most files are flat in its root.</td></tr>
+<tr><td><code>source/text/</code></td><td>Fonts, wrapping, tables, UTF-8, number and date formatting. Used more than you would guess.</td></tr>
+<tr><td><code>source/image/</code></td><td>Sprites, image loading, and the pixel masks used for collision.</td></tr>
+<tr><td><code>source/shader/</code></td><td>C++ wrappers around the GL shaders, plus the draw lists that batch sprites.</td></tr>
+<tr><td><code>source/audio/</code></td><td>OpenAL playback, music streaming, positional sound.</td></tr>
+<tr><td><code>source/test/</code></td><td>The <em>in-game</em> test framework that drives scripted playthroughs. Not unit tests.</td></tr>
+<tr><td><code>source/windows/</code></td><td>The only platform-specific corner: Windows console, timer resolution, version checks.</td></tr>
+<tr><td><code>data/</code></td><td>The universe. Faction folders, plus cross-cutting files like <code>map systems.txt</code>.</td></tr>
+<tr><td><code>images/</code>, <code>sounds/</code></td><td>Assets, referenced from <code>data/</code> by extensionless relative path.</td></tr>
+<tr><td><code>tests/</code></td><td>Unit tests in C++; integration tests written in the game's own data format.</td></tr>
+<tr><td><code>utils/</code></td><td>Five standalone checkers that gate every change, plus release scripts.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+<span class="co-label">No naming scheme to learn</span>
+Unlike many game codebases, there is no suffix convention here &mdash; no <code>_cmd</code>, <code>_gui</code> or <code>_base</code> families. A class lives in a file named after itself: <code>Ship</code> in <code>Ship.h</code> and <code>Ship.cpp</code>. Finding code is a matter of guessing the class name, which is almost always the game's own word for the thing.
+</div>
+
+<h2 id="sec3"><span class="secnum">3</span>One text format, for everything</h2>
+
+<p>Learn the file format before anything else, because it is the interface between almost every part of this project. Game content, saved games, plugins, preferences and the integration test suite are <em>all</em> written in it, and all parsed by the same two classes.</p>
+
+<p>The rules fit in four lines:</p>
+
+<ul>
+<li>A <strong>node</strong> is one line of whitespace-separated tokens.</li>
+<li>Its <strong>children</strong> are the lines indented one tab further.</li>
+<li>Double quotes group words into a single token; backticks group text that itself contains quotes.</li>
+<li>The <strong>first token names the kind of thing</strong>, and usually the second is the name it is filed under.</li>
+</ul>
+
+<pre><code><span class="k">ship</span> <span class="p">"Aerie"</span>
+    <span class="n">sprite</span> <span class="p">"ship/aerie"</span>
+    <span class="n">attributes</span>
+        <span class="n">category</span> <span class="p">"Medium Warship"</span>
+        <span class="p">"cost"</span> <span class="m">3500000</span>
+        <span class="p">"shields"</span> <span class="m">5700</span>
+    <span class="n">outfits</span>
+        <span class="p">"Heavy Laser Turret"</span> <span class="m">2</span>
+        <span class="p">"NT-200 Nucleovoltaic"</span>
+</code></pre>
+
+<p>In C++ that arrives as a <code>DataNode</code>: a list of tokens you read with <code>Token(i)</code> for strings or <code>Value(i)</code> for numbers, plus a list of child nodes. Every loader in the codebase has the same shape &mdash; a <code>Load(const DataNode &amp;node)</code> that walks its own tokens, then loops over the children and dispatches on <em>their</em> first token, recursing down. Read one <code>Load</code> function and you can read all of them.</p>
+
+<p>The format is deliberately forgiving about what it does not recognise, and deliberately loud about it: an unknown key produces a warning naming the file, the line and the enclosing nodes, rather than a failure. A plugin written against a different version of the game degrades instead of crashing.</p>
+<h2 id="sec4"><span class="secnum">4</span>How a universe assembles itself</h2>
+
+<p>Here is the trick that makes the whole data-driven design work, and it is four lines long. Every kind of definition lives in a <code>Set</code>, and asking a <code>Set</code> for something by name looks like this:</p>
+
+<pre><code><span class="k">template</span>&lt;<span class="k">class</span> <span class="m">Type</span>&gt;
+<span class="k">class</span> <span class="m">Set</span> {
+    <span class="m">Type</span> *Get(<span class="k">const</span> <span class="m">string</span> &amp;name) { <span class="k">return</span> &amp;data[name]; }
+    <span class="c">// ... data is a std::map&lt;string, Type&gt;</span>
+};
+</code></pre>
+
+<p>In C++, indexing a map with a key that is not there does not fail &mdash; it <strong>creates an empty entry and returns it</strong>. So <code>Get("Kestrel")</code> always succeeds, whether or not any file has defined a Kestrel yet, and the pointer it returns stays valid for the life of the program.</p>
+
+<p>Three large consequences fall out of that one line:</p>
+
+<ul>
+<li><strong>Load order does not matter.</strong> A mission can point at a planet defined in a file that has not been read yet. It gets a pointer to the blank planet, which fills in later.</li>
+<li><strong>Circular references are free.</strong> A system lists its planets; each planet names its system. Neither has to exist first.</li>
+<li><strong>A typo produces a ghost.</strong> Misspell a ship name and you do not get an error &mdash; you get a pointer to an empty ship that nothing ever fills in.</li>
+</ul>
+
+<p>That last one is why loading has a third phase. <code>CheckReferences()</code> runs after all files are read and sweeps the sets for objects that were referred to but never defined, reporting them. It is the safety net under the convenience.</p>
+
+<h3>Redefining merges; it does not replace</h3>
+
+<p>Load a <code>ship "Aerie"</code> node when an Aerie already exists and its fields are written <em>over the existing object</em>. Anything the second definition does not mention keeps its old value. This is the mechanism behind plugins that patch the base game: a four-line file that adjusts one ship's shield value leaves the other forty fields alone.</p>
+
+<p>When you genuinely want a clean slate, an <code>overwrite</code> line before the definition resets the object first:</p>
+
+<pre><code><span class="k">overwrite</span>
+<span class="k">ship</span> <span class="p">"Aerie"</span>
+    <span class="c">// starts from a blank Aerie, not the shipped one</span>
+</code></pre>
+
+<div class="callout">
+<span class="co-label">Where this bites</span>
+Because merging is the default, a plugin that <em>removes</em> something cannot do it by redefining the thing as empty. Subtraction has to be expressed by the game's own vocabulary &mdash; <code>remove</code> and <code>unlink</code> nodes, or an event that changes the universe &mdash; not by omission.
+</div>
+
+<h3>The three phases of loading</h3>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Phase</th><th>What happens</th></tr></thead>
+<tbody>
+<tr><td><code>BeginLoad()</code></td><td>Directories are walked and files parsed, spread across a pool of worker threads. Sprites and sounds stream in alongside. This is what the loading screen is measuring.</td></tr>
+<tr><td><code>FinishLoading()</code></td><td>Cross-references are resolved: neighbouring systems computed, wormhole requirements worked out, derived values filled in.</td></tr>
+<tr><td><code>CheckReferences()</code></td><td>Everything referred to but never defined is reported. Nothing is fixed here &mdash; it is a diagnostic pass.</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>And then, because stories mutate the world, there is a fourth operation that is not part of loading at all. <code>Revert()</code> walks the current sets against a pristine copy, deletes anything that was added and restores anything that was changed. It runs when you switch pilots, and it is the reason one character's finished war does not leak into another's galaxy.</p>
+
+<h2 id="sec5"><span class="secnum">5</span>Conditions: the seam</h2>
+
+<p>A data file can define a ship. But how does a data file ask a <em>question</em> &mdash; whether the player has 50,000 credits, or has visited Earth, or is flying a warship? The answer is one flat namespace of named integers called <strong>conditions</strong>, and it is the single most important interface in the codebase.</p>
+
+<p>Every condition is a string mapped to a 64-bit integer. Mission requirements, event triggers, conversation branches and the integration tests all read and write this one namespace:</p>
+
+<pre><code><span class="k">mission</span> <span class="p">"Example Delivery"</span>
+    <span class="n">to offer</span>
+        <span class="p">"combat rating"</span> &gt;= <span class="m">200</span>
+        <span class="n">has</span> <span class="p">"visited planet: Earth"</span>
+    <span class="n">on complete</span>
+        <span class="p">"reputation: Republic"</span> += <span class="m">10</span>
+</code></pre>
+
+<p>What makes this more than a save-file dictionary is that <strong>only some conditions are actually stored</strong>. The rest are <em>derived</em>: the C++ registers a function against a name, and reading the condition runs that function against live game state. About 115 of these are registered across <code>PlayerInfo</code> and <code>AI</code>:</p>
+
+<pre><code>conditions[<span class="p">"net worth"</span>].ProvideNamed(...);
+conditions[<span class="p">"days since start"</span>].ProvideNamed(...);
+conditions[<span class="p">"flagship planet: "</span>].ProvidePrefixed(...);
+</code></pre>
+
+<p>The prefixed form is the clever half. Registering the prefix <code>"flagship planet: "</code> claims an entire infinite family of names: <code>"flagship planet: Mars"</code>, <code>"flagship planet: Luna"</code> and every other planet, each answered by the same function inspecting the suffix. Content authors get to write a question about any planet in the galaxy without a single line of C++ being added for it.</p>
+
+<blockquote>
+<p>This is the seam. Data files cannot call functions, but they can read names &mdash; so the engine exposes everything it knows as names. Adding a new fact about the world that missions can test means registering one lambda, not extending a syntax.</p>
+</blockquote>
+
+<h2 id="sec6"><span class="secnum">6</span>Missions</h2>
+
+<p>There are about <strong>2,330 mission definitions</strong> in the data files, which makes missions the largest single category of content in the game and <code>Mission.cpp</code> the fifth-largest source file. The design worth understanding is the split between a template and an instance.</p>
+
+<p>A mission in a data file is a <em>template</em>, and it is often deliberately vague: deliver cargo to some planet in some region, for a fee that scales with distance. When the player walks into a spaceport, the engine finds templates whose conditions are satisfied and calls <code>Instantiate()</code>, which picks the random values, resolves "some planet in the Dirt Belt" to an actual planet, substitutes text, and produces a concrete mission. One template supplies an unlimited number of distinct jobs.</p>
+
+<p>The detail that reveals the architecture is in a comment on a single function:</p>
+
+<blockquote>
+<p><code>// Load a mission, either from the game data or from a saved game.</code></p>
+</blockquote>
+
+<p>The same <code>Load</code> reads both. A template and a saved in-progress instance are the same class in the same format &mdash; the instance simply has all its blanks filled in. Saving a mission is writing it back out; loading a save is the ordinary content path with different input.</p>
+
+<p>Missions attach to the world in two dimensions. <strong>Location</strong> decides where the player encounters the offer &mdash; the spaceport, the job board, on landing, on entering a system, or when boarding a ship. <strong>Triggers</strong> decide when the mission's own actions fire:</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Trigger</th><th>Fires when</th></tr></thead>
+<tbody>
+<tr><td><code>OFFER</code>, <code>ACCEPT</code>, <code>DECLINE</code>, <code>DEFER</code></td><td>The player is shown the mission and responds to it.</td></tr>
+<tr><td><code>VISIT</code>, <code>STOPOVER</code>, <code>WAYPOINT</code></td><td>The player reaches a place the mission cares about.</td></tr>
+<tr><td><code>COMPLETE</code>, <code>FAIL</code>, <code>ABORT</code></td><td>The mission ends, one way or another.</td></tr>
+<tr><td><code>DAILY</code></td><td>Each day that passes while the mission is active. Never has access to the interface.</td></tr>
+<tr><td><code>DISABLED</code></td><td>A ship belonging to the mission is disabled.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="sec7"><span class="secnum">7</span>Two loops, one step apart</h2>
+
+<p>The outer loop is unremarkable: poll SDL events, step the panels, draw them, sleep until 1/60 of a second has passed. The interesting structure is one level down, in how the flight simulation gets off the drawing thread.</p>
+
+<p><code>Engine</code> does its physics, collision and AI work as a task on a worker thread, and the main thread talks to it through exactly three calls per frame. The state it produces is <strong>double-buffered</strong> &mdash; two draw lists, two radar snapshots &mdash; so the main thread can be drawing buffer 0 while the worker fills buffer 1.</p>
+
+<figure class="fig">
+<svg viewBox="0 0 780 330" role="img" aria-label="Timeline diagram of one frame: the main thread calls Wait, Step, Go and Draw in sequence, while the worker thread computes the next simulation step into the other of two buffers, overlapping the main thread's drawing.">
+  <defs>
+    <marker id="a2" viewBox="0 0 9 9" refX="8" refY="4.5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0.5 L8.5,4.5 L0,8.5 z" class="d-head"/>
+    </marker>
+  </defs>
+
+  <path d="M120,40 L120,214" class="d-lead"/>
+  <path d="M430,40 L430,214" class="d-lead"/>
+  <path d="M740,40 L740,214" class="d-lead"/>
+
+  <text x="104" y="83" text-anchor="end" class="d-t">Main thread</text>
+  <text x="104" y="177" text-anchor="end" class="d-t">Worker task</text>
+
+  <rect x="120" y="56" width="56" height="46" rx="4" class="d-tick"/>
+  <text x="148" y="83" text-anchor="middle" class="d-t">Wait()</text>
+  <rect x="176" y="56" width="78" height="46" rx="4" class="d-box"/>
+  <text x="215" y="83" text-anchor="middle" class="d-t">Step()</text>
+  <rect x="254" y="56" width="44" height="46" rx="4" class="d-gate"/>
+  <text x="276" y="83" text-anchor="middle" class="d-t">Go()</text>
+  <rect x="298" y="56" width="96" height="46" rx="4" class="d-box"/>
+  <text x="346" y="83" text-anchor="middle" class="d-t">Draw()</text>
+  <rect x="394" y="56" width="36" height="46" rx="4" class="d-idle"/>
+
+  <rect x="430" y="56" width="56" height="46" rx="4" class="d-tick"/>
+  <text x="458" y="83" text-anchor="middle" class="d-t">Wait()</text>
+  <rect x="486" y="56" width="78" height="46" rx="4" class="d-box"/>
+  <text x="525" y="83" text-anchor="middle" class="d-t">Step()</text>
+  <rect x="564" y="56" width="44" height="46" rx="4" class="d-gate"/>
+  <text x="586" y="83" text-anchor="middle" class="d-t">Go()</text>
+  <rect x="608" y="56" width="96" height="46" rx="4" class="d-box"/>
+  <text x="656" y="83" text-anchor="middle" class="d-t">Draw()</text>
+  <rect x="704" y="56" width="36" height="46" rx="4" class="d-idle"/>
+
+  <rect x="254" y="150" width="216" height="46" rx="4" class="d-run"/>
+  <text x="362" y="178" text-anchor="middle" class="d-ta">CalculateStep() &#8594; buffer 1</text>
+
+  <rect x="564" y="150" width="176" height="46" rx="4" class="d-run"/>
+  <text x="652" y="178" text-anchor="middle" class="d-ta">CalculateStep() &#8594; buffer 0</text>
+
+  <path d="M254,102 L254,150" class="d-edge d-dash" marker-end="url(#a2)"/>
+  <text x="262" y="130" class="d-ts">hands off</text>
+  <path d="M470,150 L470,102" class="d-edge d-dash" marker-end="url(#a2)"/>
+  <text x="478" y="130" class="d-ts">joins</text>
+
+  <path d="M120,234 L430,234" class="d-edge"/>
+  <path d="M120,228 L120,240" class="d-edge"/>
+  <path d="M430,228 L430,240" class="d-edge"/>
+  <text x="275" y="256" text-anchor="middle" class="d-ts">one frame &mdash; 1/60 second</text>
+
+  <text x="120" y="288" class="d-ta">Go() flips to the other buffer and launches the next simulation step.</text>
+  <text x="120" y="308" class="d-ta">Wait() blocks until it lands, then promotes that buffer to the one being drawn.</text>
+</svg>
+<figcaption>The drawn frame is always one simulation step &mdash; about 17 milliseconds &mdash; behind what has been calculated. The lag is far below perception, and it buys the thing that matters: a system crowded with ships costs calculation time that overlaps with drawing rather than adding to it.</figcaption>
+</figure>
+
+<p>Two details are worth keeping in mind when reading <code>Engine</code>. First, the main thread must never touch simulation state outside <code>Step()</code> &mdash; that is the window when the worker is known to be idle, which is why sprite uploads and event dispatch are wedged in there rather than anywhere more natural. Second, <strong>fast-forward is implemented in the outer loop, not the engine</strong>: it steps the panels every iteration but skips both the drawing and the frame-rate sleep on two frames out of three. The simulation runs at triple speed; the display stays at 60 frames per second.</p>
+
+<h2 id="sec8"><span class="secnum">8</span>Panels all the way down</h2>
+
+<p>Everything you look at is a <code>Panel</code>, and panels live on a stack managed by a <code>UI</code>. The rule has two halves, running in opposite directions:</p>
+
+<ul>
+<li><strong>Events travel top-down.</strong> Each panel from the top of the stack is offered the event until one handles it. A panel that does not understand a key simply declines it, and it falls through.</li>
+<li><strong>Drawing travels bottom-up.</strong> The bottom panel draws first, so panels above it composite over the top. This is why a dialog can dim the flight view behind it rather than replacing it.</li>
+</ul>
+
+<p>There are two stacks, not one. <code>gamePanels</code> holds the flight view and everything the player opens from it; <code>menuPanels</code> holds the main menu and the preferences screen. If the menu stack is non-empty it takes priority for both events and drawing, which is how the game pauses itself when you open the menu &mdash; not with a paused flag, but by having the panel that steps the simulation stop being stepped.</p>
+
+<p>Panels push and pop themselves. The one piece of ceremony to know is that a popped panel is not destroyed immediately &mdash; deletion is deferred to the start of the next step, which makes it safe for a panel to pop itself from inside its own event handler. That is the ordinary case: a dialog's OK button pops the dialog.</p>
+<h2 id="sec9"><span class="secnum">9</span>Ships, angles and collisions</h2>
+
+<p>Objects in flight share a four-level inheritance chain, and each level adds exactly one idea:</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Class</th><th>Adds</th></tr></thead>
+<tbody>
+<tr><td><code>Drawable</code></td><td>A sprite, possibly animated.</td></tr>
+<tr><td><code>Body</code></td><td>Position, velocity, facing.</td></tr>
+<tr><td><code>Entity</code></td><td>What ships and minable asteroids have in common.</td></tr>
+<tr><td><code>Ship</code></td><td>Everything else &mdash; 5,305 lines of it.</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Two things about <code>Ship</code> are worth stating outright, because both are load-bearing and neither is obvious.</p>
+
+<p><strong>There is no separate class for the player's ship.</strong> The flagship is a <code>Ship</code> like every pirate and freighter in the system; the difference is only in who issues its commands. The <code>AI</code> class drives all of them, including the flagship, whose keyboard input arrives through the same command mechanism the autopilot uses. This is why the autopilot can land, aim and jump for you without any special-casing &mdash; it is issuing the same commands you would.</p>
+
+<p><strong>A ship model and a flying ship are the same class.</strong> The <code>"Aerie"</code> entry in the shipyard catalogue and the Aerie currently taking fire in orbit are both <code>Ship</code> objects; buying one copies the model. That is what makes a saved ship round-trip perfectly: saving writes the same fields loading reads.</p>
+
+<h3>Three optimisations you will meet immediately</h3>
+
+<p>These show up in almost any file you open, and each looks strange until you know why.</p>
+
+<p><strong><code>Angle</code> is an integer, not a number of degrees.</strong> It stores a 16-bit step count &mdash; 65,536 of them around the circle &mdash; indexing a precomputed table of unit vectors built once at startup. Rotating a vector becomes a table lookup rather than a pair of trigonometric calls, and wrapping past 360 degrees is a bitwise AND that cannot drift. Note also that angles here are <em>clock</em> angles: zero is up, and they increase clockwise.</p>
+
+<p><strong><code>Point</code> is a pair of doubles in an SSE register.</strong> The most-used class after <code>GameData</code> holds a 2D vector in the processor's vector unit, so adding positions or scaling velocities is a single instruction. It is used for positions, velocities, distances and directions interchangeably.</p>
+
+<p><strong>Collision is two-stage.</strong> A <code>CollisionSet</code> divides the system into a grid of cells and tracks which bodies are in which, so a projectile only tests against objects in the cells it crosses. Anything that survives that is then tested against a <code>Mask</code> &mdash; the sprite's outline reduced to a polygon at load time, not a per-pixel comparison. Shots land where the artwork says the hull is, at polygon cost rather than bitmap cost.</p>
+
+<h2 id="sec10"><span class="secnum">10</span>The artwork is data too</h2>
+
+<p>There is no sprite manifest anywhere in this project. No atlas definition, no JSON listing frames, nothing in <code>data/</code> describing the images. Instead, <strong>the filename is the metadata</strong>, and the loader parses it.</p>
+
+<p>A sprite is referenced from game data by a path with no extension and no frame number:</p>
+
+<pre><code><span class="k">ship</span> <span class="p">"Aerie"</span>
+    <span class="n">sprite</span> <span class="p">"ship/aerie"</span>
+</code></pre>
+
+<p>The loader then collects every file on disk whose name reduces to that, reading the decorations off the end of each. The rule to internalise is that <strong>a frame number is only a frame number when a blending marker introduces it</strong> &mdash; trailing digits on their own are just part of the name:</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Filename ends with</th><th>Means</th><th>Example from this tree</th></tr></thead>
+<tbody>
+<tr><td>nothing</td><td>A single still image</td><td><code>ship/aaulqra.png</code></td></tr>
+<tr><td><code>-0</code>, <code>-1</code>, &hellip;</td><td>Frame number, ordinary alpha blending</td><td><code>archonateleport-0.png</code></td></tr>
+<tr><td><code>+0</code>, <code>+1</code>, &hellip;</td><td>Frame number, additive &mdash; for things that glow</td><td><code>afterburner+0.png</code></td></tr>
+<tr><td><code>^0</code>, <code>^1</code>, &hellip;</td><td>Frame number, half-additive</td><td><code>acuit hit^0.png</code></td></tr>
+<tr><td><code>=0</code>, <code>=1</code>, &hellip;</td><td>Frame number, premultiplied alpha</td><td><code>ribault=0.png</code></td></tr>
+<tr><td><code>@2x</code>, <code>@1x</code></td><td>Resolution variant; also exempts the image from downscaling</td><td>99 files use <code>@1x</code></td></tr>
+<tr><td><code>@sw</code></td><td>A swizzle mask, for recolouring a ship by faction</td><td><code>avgi atenuatia@sw.png</code></td></tr>
+</tbody>
+</table>
+</div>
+
+<p>The markers are not evenly used: additive (840 files) and half-additive (467) dominate, because most animated art in this game is weapons fire, engine flare and explosions. Plain alpha frames number 192, and premultiplied alpha just 6. A fifth marker, <code>~</code>, is the deprecated spelling of half-additive &mdash; it still loads, and logs a warning asking you to use <code>^</code>.</p>
+
+<div class="callout warn">
+<span class="co-label">The consequence</span>
+Renaming an image file changes game behaviour, silently. Drop the <code>+</code> from <code>afterburner+0.png</code> and you have not made frame 0 opaque &mdash; you have created a still image called "afterburner0" that nothing references, and an afterburner that no longer has a sprite. There is no schema to validate against; the only check is loading every asset and looking, which is what <code>--parse-assets</code> does.
+</div>
+
+<p>The payoff is that an artist adds a five-frame animated effect by dropping five correctly-named PNGs into a folder. No registration, no rebuild, no code.</p>
+
+<h2 id="sec11"><span class="secnum">11</span>Saving and plugins</h2>
+
+<p>By now the shape of both of these is predictable.</p>
+
+<p>A <strong>saved game</strong> is written with <code>DataWriter</code>, which emits the same format <code>DataFile</code> reads. Open one in a text editor and you will find your ships as <code>ship</code> nodes, your missions as <code>mission</code> nodes and your conditions as a flat list of name/value pairs &mdash; all of it legible, and all of it hand-editable. There is no version number to migrate and no binary layout to keep compatible: an old save loads because the loader ignores what it does not recognise and defaults what is absent.</p>
+
+<p>A <strong>plugin</strong> is a directory in the player's configuration folder laid out exactly like the repository root &mdash; a <code>data/</code> folder, an <code>images/</code> folder, a <code>sounds/</code> folder. The loader is handed a list of source directories and reads them in turn; the shipped game is just the first entry. Everything that gives plugins their power is a property of the loading rules already described:</p>
+
+<ul>
+<li>Redefining merges, so a plugin can change one field of one ship.</li>
+<li>Names are the only linkage, so a plugin can reference anything in the base game.</li>
+<li>Load order does not matter, so a plugin can be read before or after what it refers to.</li>
+<li>Unknown keys warn instead of failing, so a plugin survives a game update.</li>
+</ul>
+
+<p>None of those were built for plugins. They are the same rules that load the shipped campaign.</p>
+
+<h2 id="sec12"><span class="secnum">12</span>Building and checking</h2>
+
+<p>The build is CMake with presets. Pick the preset for your compiler &mdash; <code>clang-cl</code>, <code>mingw</code> or <code>mingw32</code> on Windows, <code>linux</code>, <code>macos</code> or <code>macos-arm</code> elsewhere:</p>
+
+<pre><code>cmake --preset &lt;preset&gt;                        <span class="c">// configure, once</span>
+cmake --build --preset &lt;preset&gt;-debug          <span class="c">// game and tests</span>
+ctest --preset &lt;preset&gt;-test                   <span class="c">// unit tests</span>
+ctest --preset &lt;preset&gt;-integration            <span class="c">// scripted playthroughs (Linux)</span>
+</code></pre>
+
+<p>Testing splits along the same data/code line as everything else. <strong>Unit tests</strong> are C++ with Catch2, and they are sharply limited: the codebase has no dependency injection, so anything that touches <code>GameData</code> cannot be unit tested at all. What gets covered is the self-contained machinery &mdash; the parser, conditions, formatting, geometry. <strong>Integration tests</strong> cover the rest by running the real game headless and driving it with scripts that are, inevitably, written in the game's own data format and loaded as a plugin.</p>
+
+<p>There is no code formatter. Instead there are five checkers, and between them they are the project's real gate:</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>Checker</th><th>What it refuses</th></tr></thead>
+<tbody>
+<tr><td><code>check_code_style.py</code></td><td>C++ formatting, copyright headers, include order. Reports only &mdash; it cannot fix.</td></tr>
+<tr><td><code>check_content_style.py</code></td><td>Data-file indentation and prose: doubled words, wrong indefinite articles, non-ASCII punctuation. The one checker that can auto-correct.</td></tr>
+<tr><td><code>check_cmake.sh</code></td><td>Source files missing from the build lists &mdash; the invisible failure from section 2.</td></tr>
+<tr><td><code>check_shaders.sh</code></td><td>Shaders that fail to compile as <em>both</em> OpenGL 3.0 and OpenGL ES 3.0.</td></tr>
+<tr><td><code>check_copyright.py</code></td><td>A malformed <code>copyright</code> file &mdash; it is a real Debian-format document, parsed strictly.</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>For content, the strongest check is the game itself. <code>-p</code> parses all data and reports errors; <code>--parse-assets</code> additionally loads every image and sound, which is the only way to catch a sprite whose filename does not resolve.</p>
+
+<h2 id="sec13"><span class="secnum">13</span>Where to start reading</h2>
+
+<p>Pick by what you want to understand:</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>If you want to understand&hellip;</th><th>Read, in order</th></tr></thead>
+<tbody>
+<tr><td>The data format &mdash; start here regardless</td><td><code>DataNode.h</code> &rarr; <code>DataFile.h</code> &rarr; any <code>Load()</code>, e.g. <code>Outfit.cpp</code></td></tr>
+<tr><td>How the universe is assembled</td><td><code>Set.h</code> (all of it) &rarr; <code>UniverseObjects.cpp</code> &rarr; <code>GameData.cpp</code></td></tr>
+<tr><td>The simulation</td><td><code>main.cpp</code> (find <code>GameLoop</code>) &rarr; <code>MainPanel.cpp</code> &rarr; <code>Engine.cpp</code></td></tr>
+<tr><td>How content reaches the engine</td><td><code>ConditionsStore.h</code> &rarr; the registration block near the end of <code>PlayerInfo.cpp</code></td></tr>
+<tr><td>The interface</td><td><code>Panel.h</code> &rarr; <code>UI.h</code> &rarr; any panel, e.g. <code>ShopPanel.cpp</code></td></tr>
+</tbody>
+</table>
+</div>
+
+<blockquote>
+<p>A suggestion, having traced these paths: do not start in <code>source/</code>. Open <code>data/human/ships.txt</code> and read a ship definition, then find the code that consumes it. In a codebase where the content outweighs the engine two to one, the data files are the specification and the C++ is the implementation &mdash; and reading them in that order means every class you meet arrives with a reason to exist already attached.</p>
+</blockquote>
+
+<hr>
+
+<p style="color: var(--text-faint); font-size: 0.85rem;">Compiled by reading the Endless Sky source tree at version 0.11.3 &mdash; the engine, the data files, the build configuration and the checker scripts. Counts and file sizes are measured from this checkout and will drift as the project moves. Details of the content format beyond what is shown here are documented on the project wiki, not in the repository.</p>
+
+</main>
+</div>
