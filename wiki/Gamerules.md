@@ -1,0 +1,80 @@
+# Table of Contents
+
+* [Introduction](#introduction)
+* [Gamerules](#gamerules)
+	* [Depreciation](#depreciation)
+	* [Person Ships](#person-ships)
+	* [NPC Behavior](#npc-behavior)
+	* [System Behavior](#system-behavior)
+	* [Miscellaneous](#miscellaneous)
+
+# Introduction
+
+Beginning in **v. 0.11.1**, gamerule presets are a collection of gamerules that can be selected by a player when on the gamerules panel, accessible during new pilot creation or from the main menu if the pilot's gamerules are editable. The player is still able to modify individual gamerules after choosing a preset. The purpose of a preset is to represent a collection of gamerule values that work well together or lead to a certain type of gameplay not experienced with other collections of gamerules.
+
+The syntax for a gamerules preset is as follows:
+
+```html
+"gamerules preset" "<name>"
+	"<rule>" <value>
+```
+
+The name "Default" is a special preset that will always be created by the game, even if the data for it is not present, and it will always be the selected gamerules preset if the player does not edit the gamerules of their pilot. 
+
+# Gamerules
+
+There are four different types of gamerule in terms of what the value of the gamerule can be:
+* Integer: The value should be given as a whole number.
+* Decimal: The value should be given as a decimal number.
+* Boolean: The value must be given as the words "true" or "false", or the numbers 1 or 0.
+* Enum: The value is a string, and the rule has a list of allowable string values that it can have.
+
+Some rules may also have no value at all (called "optional" rules), represented by the string "unset".
+
+These are the gamerules that are currently available:
+
+## Depreciation
+
+The depreciated value of an item that is "age" days old is calculated with the following equation where: "base value" is the undepreciated value of the item; min is "depreciation min"; "grace period" is "depreciation grace period"; daily is "depreciation daily"; and "max age" is "depreciation max age", and age is at greater than "grace period" and less than "max age".
+`"depreciated value" = "base value" * (min + (1 - min) * (daily ^ (age - "grace period")) * ("max age" + "grace period" - age) / "max age")`
+
+* `"depreciation min"`: A decimal rule whose value must be between 0 and 1, inclusive, where 0 = 0% and 1 = 100%. Represents the lowest value that an outfit or ship can depreciate to relative to its full price. All plundered, captured, or gifted items start at this value, and all purchased items start at 100% value and then depreciate toward this value according to the other depreciation gamerules.
+* `"depreciation grace period"`: An integer rule whose value must be greater than or equal to 0. Represents the number of days that must pass before a newly purchased outfit or ship will begin to depreciate. This allows you to have a short amount of time to test out an item and then sell it back at full value if you decide that you do not like it.
+* `"depreciation max age"`: An integer rule whose value must be greater than or equal to 0. Represents the number of days that must pass, after the grace period has ended, in order for an outfit or ship to become fully depreciated.
+* `"depreciation daily"`: A decimal rule whose value must be between 0 and 1, inclusive, where 0 = 0% and 1 = 100%. Represents the percentage of an item's depreciable value that it maintains day over day. Only impacts the exponential term of the depreciation calculation. If set to 100%, an item will still linearly lose value.
+
+## Person Ships
+
+* `"person spawn period"`: An integer rule whose value must be greater than or equal to 1. Sets the number of frames on average that the game waits before attempting to spawn a person ship. The game rolls a random number between 0 and this value minus one every frame. If the value lands on 0, a person ship spawn attempt is made. There are 60 frames in a second.
+* `"no person spawn weight"`: An integer rule whose value must be greater than or equal to 0. When a person ship spawn attempt is made, this is the "weight" of the chance of having the spawn attempt fail. Each person ship has a "weight" associated with it which determines its chance of spawning. The chance of any single person ship spawning is its weight divided by the sum of the weights of all person ships and this value. That means that the chance of a spawn attempt failing is this number over that sum.
+
+## NPC Behavior
+
+* `"npc max mining time"`: An integer rule whose value must be greater than or equal to 0. Randomly spawned NPCs with the `mining` personality will spend this many frames mining in the current system before deciding to do something else. The purpose of this limit is so that NPC ships can be seen by the player to show how to mine without stripping the system bare of minable asteroids. This limit does not apply to mining ships that are spawned by a mission.
+* `"universal frugal threshold"`: A decimal rule whose value must be between 0 and 1, inclusive, where 0 = 0% and 1 = 100%. Ships with the `frugal` personality will only use weapons that consume ammo or fuel while their health (shields + hull - the hull level when they become disabled) is at or below this percentage, or if the hostiles in the system are considerably stronger than them.
+
+## Fleet Size Limitation
+
+* `"fleet size limitation"`: An enum gamerule that controls whether the number of escorts you can have active (i.e. unparked and alive) at once is limited. It has the following values:
+  * `"none"`: You are not limited at all in the number of escorts you can have. (The default value.)
+  * `"ship capacity"`: You are limited by the number of escorts you can have. Carried ships (fighters, drones, and any custom bay categories) do not count toward this limit.
+  * `"crew capacity"`: You are limited by the base required crew of all of your escorts. The base required crew is used instead of the current required crew because the purpose of this mechanic is to limit the number of ships you can have, not limit how you can outfit them. If the current required crew were used, then you could be prevented from installing a turret because it would add required crew to a ship that puts you over your fleet capacity. For automata ships, the "crew equivalent" attribute is used. Carried ships (fighters, drones, and any custom bay categories) do not count toward this limit.
+  * `"administrative capacity"`: You are limited by the "administrative cost" of your escorts. Each ship has a cost to it defined by the ship node mentioned below. If a ship does not list an "administrative cost", then its cost is 0 if it is a carried ship and 1 otherwise.
+* `"default max escort count"`, `"default max escort crew"`, and `"default admin cap"`: Determine the default capacity for the corresponding limitation type. Since these are only the defaults, they have no effect on existing pilots. After a pilot has been created, these defaults get copied into the player's save file and can then be modified by the conditions mentioned below.
+
+## System Behavior
+
+* `"universal ramscoop"`: A boolean rule that controls whether the universal ramscoop is active on all ships. This ramscoop provides a very small amount of fuel to every ship regardless of whether it has an actual ramscoop installed. The strength of this ramscoop falls off much more strongly than normal ramscoops, requiring you to be as close to a star as possible to have any real gain in fuel. Having this enabled prevents needing to reload your save file if you run out of fuel and no NPCs spawn in the system.
+* `"system arrival min"`: An optional decimal rule whose value can be any number. Represents the minimum arrival distance for all systems. Applies to both hyperdrive and jump drive travel. If the system has a defined arrival distance greater than this value, then it will be used instead. If this gamerule has a value of "unset", then the value defined by the system will always be used.
+* `"system departure min"`: A decimal rule whose value must be greater than or equal to 0. Represents the minimum departure distance for all systems. A ship can only jump out of a system if it is farther from the system center than the departure distance. If a system has a defined departure distance greater than this value, then it will be used instead.
+* `"habitable based arrival distance"`: A boolean rule that controls whether systems that do not define their own arrival distance use the habitable distance as their arrival distance. **(v. 0.11.3)**
+* `"habitable arrival min"`: An optional decimal rule that determines the minimum arrival distance when the arrival distance is being generated from the habitable distance. **(v. 0.11.3)**
+* `"habitable arrival max"`: An optional decimal rule that determines the maximum arrival distance when the arrival distance is being generated from the habitable distance. **(v. 0.11.3)**
+* `"fleet multiplier"`: A decimal rule whose value must be greater than or equal to 0, where 0 = 0%, 1 = 100%, 1.5 = 150%, and so on. Represents a global fleet spawn rate multiplier for random fleet spawns within systems.
+
+## Miscellaneous
+
+* `"lock gamerules"`: A boolean rule that controls whether gamerules can be altered after a pilot has been created. If true, the gamerules button will not appear on the main menu for that pilot.
+* `"disabled fighters avoid projectiles"`: An enum rule whose allowed values are "all", "none", and "only player". Controls which carried ships (fighters and drones), when disabled, will not be hit by projectiles unless they are directly targeted. Fighters and drones are fragile ships that can be difficult and/or tedious to replace for the player, so this gamerule is a means of increasing their survivability without increasing their combat effectiveness. Disabled carried ships can still be hit by explosions, whether from weapons or exploding ships.
+* `"universal ammo restocking"`: A boolean rule that controls whether the ammo for most secondary weapons that you have installed or in your cargo will be available for purchase at any outfitter, even if that outfitter does not normally sell ammo of that type. The description of each secondary weapon will indicate whether it can be restocked anywhere when this rule is true.
+* `"spawn raid fleets"`: A boolean rule that controls whether raid fleets spawn when your pirate attraction is too high. When off, the `"raid chance in system: <system>"` condition always returns 0, but the `"pirate attraction"` condition will still return non-zero values. It will also hide the piracy threat information from the player info panel.

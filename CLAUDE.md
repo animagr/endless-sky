@@ -32,13 +32,17 @@ There is no intention to contribute changes back the other way. Practical conseq
 - Note that **upstream's `docs/CONTRIBUTING.md` forbids AI-generated or AI-assisted contributions.** Work done
   here with Claude is fine for the fork, but it must not be submitted upstream as a pull request.
 
-Two things in this checkout are local to the fork and untracked, not part of upstream:
+Several things in this checkout are additions made in the fork, tracked here but absent from upstream. None of
+them exist in any upstream path, so they never conflict when merging `upstream/master`:
 
+- **`wiki/`** - a snapshot of upstream's community wiki (56 pages, commit `ef5f768`, 2026-09-07), which is where
+  the game-data format is actually specified. See the note at the end of this file.
 - **`.codemapy/`** - a generated code map. `.codemapy/summary.md` is a fast orientation to hubs, entry points and
   file sizes.
 - **`Endless Sky Guide.md`** - a player-facing strategy guide written against this checkout (version 0.11.3). It
   is about *playing* the game, not developing it; don't treat it as project documentation, and note that its
   numbers are pinned to the source as of when it was written.
+- **`Endless Sky Codebase Overview.html`** - an architecture tour of this codebase for a reader new to it.
 
 ## What this is
 
@@ -123,5 +127,28 @@ Other useful runtime flags: `-r <path>` (resources dir), `-c <path>` (config dir
 - **Two `CMakeLists.txt` files must be kept in sync by hand**: every new file under `source/` (except `main.cpp`)
   goes in `source/CMakeLists.txt`, and every new file under `tests/unit/` plus every new integration-test `.txt`
   goes in `tests/CMakeLists.txt`.
-- Upstream documents the game-data node reference and the C++ style guide on its
-  [wiki](https://github.com/endless-sky/endless-sky/wiki), not in this repository.
+- **The data format is specified in `wiki/`, not in the source tree.** The repository documents the content
+  format only by example; upstream's wiki is the actual reference, and a snapshot of it is checked in here.
+
+## The `wiki/` snapshot
+
+`wiki/` is a copy of <https://github.com/endless-sky/endless-sky/wiki> (56 pages, upstream commit `ef5f768`,
+2026-09-07), flattened to plain Markdown so it can live in this fork's history. **It is upstream's community
+documentation, not work authored in this fork** - treat it as a vendored reference and don't edit the pages.
+
+Reach for it before guessing at content syntax. The pages that carry the node reference the source tree lacks:
+
+| Page | Covers |
+|---|---|
+| `DataFormat.md` | The token/indentation grammar itself |
+| `CreatingMissions.md`, `CreatingOutfits.md`, `CreatingShips.md` | The three biggest node vocabularies |
+| `MapData.md` | Systems, planets and how the galaxy map is defined |
+| `LocationFilters.md`, `Player-Conditions.md` | The filter syntax and the condition namespace from the root file |
+| `CreatingPlugins.md` | Plugin layout, and `ImageFormats.md` / `SpriteData.md` for the sprite filename rules |
+| `C++-Style-Guide.md` | The rules `utils/check_code_style.py` enforces mechanically |
+
+It is a snapshot, so it drifts. To refresh it:
+
+```bash
+rm -rf wiki && git clone --depth 1 https://github.com/endless-sky/endless-sky.wiki.git wiki && rm -rf wiki/.git
+```
