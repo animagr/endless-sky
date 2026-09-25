@@ -213,7 +213,6 @@ target_sources(EndlessSkyLib PRIVATE
 	Messages.h
 	Minable.cpp
 	Minable.h
-	MinableDamageDealt.h
 	MiniMap.cpp
 	MiniMap.h
 	Mission.cpp
@@ -235,6 +234,7 @@ target_sources(EndlessSkyLib PRIVATE
 	News.h
 	OptionalInputDialogPanel.cpp
 	OptionalInputDialogPanel.h
+	OrderedMap.h
 	Outfit.cpp
 	Outfit.h
 	OutfitInfoDisplay.cpp
@@ -307,6 +307,7 @@ target_sources(EndlessSkyLib PRIVATE
 	ScrollArea.cpp
 	ScrollArea.h
 	ScrollVar.h
+	SDL.h
 	Set.h
 	Ship.cpp
 	Ship.h
@@ -461,6 +462,8 @@ target_sources(EndlessSkyLib PRIVATE
 	ship/ShipAICache.h
 	ship/ShipAttributeCache.cpp
 	ship/ShipAttributeCache.h
+	ship/ShipFactory.cpp
+	ship/ShipFactory.h
 	test/Test.cpp
 	test/Test.h
 	test/TestContext.cpp
