@@ -228,6 +228,8 @@ Ship::LiveSpark::LiveSpark(const DataNode &node)
 			if(child.Size() >= 3)
 				random = max(0., child.Value(2));
 		}
+		else if(key == "start delay" && hasValue)
+			delay = max<int>(0, child.Value(1));
 		else if(key == "over")
 			side = PlacementSide::OVER;
 		else if(key == "under")
@@ -258,6 +260,8 @@ void Ship::LiveSpark::Save(DataWriter &out) const
 			out.Write("period", period, random);
 		else
 			out.Write("period", period);
+		if(delay)
+			out.Write("start delay", delay);
 		if(side == PlacementSide::OVER)
 			out.Write("over");
 		else if(side == PlacementSide::UNDER)
@@ -296,6 +300,8 @@ Ship::LiveEffect::LiveEffect(const DataNode &node)
 			if(child.Size() >= 3)
 				random = max(0., child.Value(2));
 		}
+		else if(key == "start delay" && hasValue)
+			delay = max<int>(0, child.Value(1));
 		else if(key == "position" && child.Size() >= 3)
 			position = Point(child.Value(1), child.Value(2));
 		else if(key == "angle" && hasValue)
@@ -330,6 +336,8 @@ void Ship::LiveEffect::Save(DataWriter &out) const
 			out.Write("period", period, random);
 		else
 			out.Write("period", period);
+		if(delay)
+			out.Write("start delay", delay);
 		if(angle.Degrees())
 			out.Write("angle", angle.Degrees());
 		if(position)
@@ -403,6 +411,8 @@ Ship::Decor::Decor(const DataNode &node)
 			behavior = DecorBehavior::TARGETING;
 			rotationSpeed = max(0., child.Value(1));
 		}
+		else if(key == "start delay" && hasValue)
+			delay = max<int>(0, child.Value(1));
 		else
 			child.PrintTrace("Skipping unrecognized attribute:");
 	}
@@ -435,7 +445,7 @@ void Ship::Decor::Save(DataWriter &out) const
 				out.Write("exploding");
 		}
 		if(synced)
-			out.Write(synced);
+			out.Write("synced");
 		if(behavior == DecorBehavior::STATIC)
 		{
 			if(angle.Degrees())
@@ -449,6 +459,8 @@ void Ship::Decor::Save(DataWriter &out) const
 			out.Write("moving", rotationSpeed);
 		else if(behavior == DecorBehavior::TARGETING)
 			out.Write("targeting", rotationSpeed);
+		if(delay)
+			out.Write("start delay", delay);
 	}
 	out.EndChild();
 }
@@ -1792,17 +1804,25 @@ void Ship::Place(Point position, Point velocity, Angle angle, bool isDeparting)
 	}
 
 	// Randomize the timing and angle of live sparks, effects, and non-static, non-synced decorations.
-	if(!syncedEffects)
+	for(LiveSpark &spark : liveSparks)
 	{
-		for(LiveSpark &spark : liveSparks)
-			spark.tick = Random::Int(spark.period + spark.random);
-		for(LiveEffect &effect : liveEffects)
-			effect.tick = Random::Int(effect.period + effect.random);
+		spark.tick = spark.delay;
+		if(!syncedEffects)
+			spark.tick += Random::Int(spark.period + spark.random);
+	}
+	for(LiveEffect &effect : liveEffects)
+	{
+		effect.tick = effect.delay;
+		if(!syncedEffects)
+			effect.tick += Random::Int(effect.period + effect.random);
 	}
 	Angle syncedAngle = syncedEffects ? Angle(0.) : Angle::Random();
 	for(Decor decor : decorations)
+	{
+		decor.tick = decor.delay;
 		if(decor.behavior != DecorBehavior::STATIC)
 			decor.angle = decor.synced || syncedEffects ? syncedAngle : Angle::Random();
+	}
 }
 
 
@@ -2068,7 +2088,7 @@ void Ship::Move(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flotsam)
 		currentState = PlacementActivity::WHEN_EXPLODING;
 	else if(IsDisabled())
 		currentState = PlacementActivity::WHEN_DISABLED;
-	StepLeaks(visuals, currentState);
+	StepLeaks(currentState);
 	StepLiveEffects();
 	StepDecorations(currentState);
 
@@ -2130,7 +2150,7 @@ void Ship::Draw(DrawList &draw, vector<Visual> &visuals) const
 
 
 void Ship::Draw(DrawList &draw, optional<reference_wrapper<vector<Visual>>> visuals, const Point &pos,
-	const Angle &facing, float zoom) const
+	const Angle &facing, float zoom, optional<double> parentCloakState) const
 {
 	// An empty visuals optional means this is being called from a UI panel and not Engine.
 	bool isUi = !visuals.has_value();
@@ -2142,15 +2162,16 @@ void Ship::Draw(DrawList &draw, optional<reference_wrapper<vector<Visual>>> visu
 		state = Ship::PlacementActivity::WHEN_DISABLED;
 
 	bool hasFighters = PositionFighters();
-	double cloak = Cloaking();
-	bool drawCloaked = !isUi && cloak && IsYours();
+	bool isDocked = parentCloakState.has_value();
+	double cloak = isDocked ? *parentCloakState : Cloaking();
+	bool drawCloaked = !isUi && IsYours() && cloak;
 	bool fancyCloak = Preferences::Has("Cloaked ship outlines");
 	const Swizzle *cloakSwizzle = GameData::Swizzles().Get(fancyCloak ? "cloak fancy base" : "cloak fast");
 
 	auto drawFighter = [&](const Ship::Bay &bay) -> void
 	{
 		if(bay.ship)
-			bay.ship->Draw(draw, visuals, pos + zoom * facing.Rotate(bay.point), facing + bay.facing, zoom);
+			bay.ship->Draw(draw, visuals, pos + zoom * facing.Rotate(bay.point), facing + bay.facing, zoom, cloak);
 	};
 	auto drawObject = [&draw, cloak, drawCloaked, fancyCloak, cloakSwizzle](const Body &body) -> void
 	{
@@ -2162,7 +2183,7 @@ void Ship::Draw(DrawList &draw, optional<reference_wrapper<vector<Visual>>> visu
 	};
 	auto drawEffects = [&, this](Ship::PlacementSide side) -> void
 	{
-		if(isUi)
+		if(isUi || isDocked)
 			return;
 		for(const Ship::LiveEffect &effect : liveEffects)
 		{
@@ -2181,7 +2202,7 @@ void Ship::Draw(DrawList &draw, optional<reference_wrapper<vector<Visual>>> visu
 	};
 	auto drawSparks = [&, this](Ship::PlacementSide side) -> void
 	{
-		if(isUi)
+		if(isUi || isDocked)
 			return;
 		for(const Ship::LiveSpark &spark : liveSparks)
 		{
@@ -2192,7 +2213,7 @@ void Ship::Draw(DrawList &draw, optional<reference_wrapper<vector<Visual>>> visu
 	};
 	auto drawEngineFlares = [&, this](uint8_t where)
 	{
-		if(isUi)
+		if(isUi || isDocked)
 			return;
 		if(ThrustHeldFrames(Ship::ThrustKind::FORWARD) && !EnginePoints().empty())
 			DrawFlareSprites(*this, draw, EnginePoints(),
@@ -2242,7 +2263,7 @@ void Ship::Draw(DrawList &draw, optional<reference_wrapper<vector<Visual>>> visu
 	};
 	auto drawLeaks = [&, this]() -> void
 	{
-		if(isUi)
+		if(isUi || isDocked)
 			return;
 		for(const Ship::Leak &leak : activeLeaks)
 		{
@@ -3238,14 +3259,6 @@ bool Ship::IsDamaged() const
 
 
 
-// Check if this ship has been destroyed.
-bool Ship::IsDestroyed() const
-{
-	return (levels.hull < 0.);
-}
-
-
-
 // Recharge and repair this ship (e.g. because it has landed).
 void Ship::Recharge(int rechargeType, bool hireCrew)
 {
@@ -3467,6 +3480,14 @@ bool Ship::NeedsEnergy() const
 
 	// Ships that don't need energy to move shouldn't ask for energy.
 	if(!RequiresMovementEnergy())
+		return false;
+
+	// If movement itself produces energy, the ship doesn't need energy.
+	ResourceLevels available = AvailableResources();
+	if((cache.thrustCost.energy < 0. && available.FractionalUsage(cache.thrustCost))
+			|| (cache.reverseThrustCost.energy < 0. && available.FractionalUsage(cache.reverseThrustCost))
+			|| (cache.turnCost.energy < 0. && available.FractionalUsage(cache.turnCost))
+			|| (cache.afterburnerThrustCost.energy < 0. && available.CanExpend(cache.afterburnerThrustCost)))
 		return false;
 
 	// If a ship has no energy capacity or no room for more energy, it does not need energy.
@@ -4646,7 +4667,8 @@ void Ship::CacheAttributes()
 
 
 
-int Ship::DoTakeDamage(const DamageDealt &damage, const Government *hitBy)
+int Ship::DoTakeDamage(const DamageDealt &damage, const Government *hitBy, bool wasDisabled,
+	bool wasDestroyed)
 {
 	// If the damage source government deals a DoT effect to this ship that
 	// disables or kills it outside of this function call, that event should
@@ -4656,9 +4678,6 @@ int Ship::DoTakeDamage(const DamageDealt &damage, const Government *hitBy)
 	if(hitBy)
 		lastHitBy = hitBy;
 	damageOverlayTimer = TOTAL_DAMAGE_FRAMES;
-
-	bool wasDisabled = IsDisabled();
-	bool wasDestroyed = IsDestroyed();
 
 	if(damage.Levels().shields && !isDisabled)
 	{
@@ -4834,7 +4853,7 @@ int Ship::StepDestroyed(vector<Visual> &visuals, list<shared_ptr<Flotsam>> &flot
 
 
 
-void Ship::StepLeaks(std::vector<Visual> &visuals, PlacementActivity state)
+void Ship::StepLeaks(PlacementActivity state)
 {
 	if(!GetMask().IsLoaded())
 		return;
@@ -4900,7 +4919,9 @@ void Ship::StepDecorations(PlacementActivity state)
 		Decor &decor = decorations[i];
 		if(!decor.sprite.HasSprite() || decor.behavior == DecorBehavior::STATIC)
 			continue;
-		if(!(decor.activity & state))
+		if(decor.tick)
+			--decor.tick;
+		if(!(decor.activity & state) || decor.tick)
 		{
 			decor.sprite.PauseAnimation();
 			continue;
